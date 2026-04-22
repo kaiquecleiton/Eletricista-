@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zero Mato</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #2E7D32;
+      --background: #F5F7F4;
+      --white: #FFFFFF;
+      --text: #2B2B2B;
+      --cta: #FF9800;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--background);
+      color: var(--text);
+    }
+
+    section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    h2 {
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      background: url('/img/fundo.jpg') center/cover no-repeat;
+      padding: 80px 20px;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(245,247,244,0.88);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .local {
+      display: block;
+      margin-bottom: 20px;
+      color: var(--primary);
+    }
+
+    .botao {
+      display: inline-block;
+      background: var(--cta);
+      color: #fff;
+      padding: 14px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+
+    /* SLIDER */
+    .slider {
+      position: relative;
+      width: 300px;
+      max-width: 100%;
+      margin: auto;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
+    .slider img {
+      width: 100%;
+      display: block;
+    }
+
+    .before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      overflow: hidden;
+    }
+
+    .handle {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 3px;
+      height: 100%;
+      background: #fff;
+      cursor: ew-resize;
+    }
+
+    /* CARDS */
+    .card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 500px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    /* RESULTADOS */
+    .resultados {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .resultados img {
+      width: 45%;
+      border-radius: 12px;
+    }
+
+    /* WHATSAPP */
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+    }
+
+    .whatsapp img {
+      width: 30px !important;
+      height: 30px !important;
+    }
+
+    .whatsapp:hover {
+      transform: scale(1.1);
+      transition: 0.2s;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="overlay"></div>
+
+  <div class="hero-content">
+    <h1>Cansado de mato alto no seu terreno?</h1>
+    <p>Limpeza rápida e profissional com roçadeira</p>
+    <span class="local">📍 Ribas do Rio Pardo e região</span>
+
+    <a href="https://wa.me/5567981194737" class="botao" target="_blank">
+      SOLICITAR ORÇAMENTO
+    </a>
+
+    <!-- SLIDER -->
+    <div class="slider" id="slider">
+      <img src="/img/depois.jpg">
+      <div class="before" id="before">
+        <img src="/img/antes.jpg">
+      </div>
+      <div class="handle" id="handle"></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section>
+  <h2>Serviços</h2>
+  <div class="card">
+    <p>Roçagem de terrenos</p>
+    <p>Limpeza de lotes</p>
+    <p>Chácaras</p>
+    <p>Manutenções</p>
+  </div>
+</section>
+
+<!-- RESULTADOS -->
+<section>
+  <h2>Resultados</h2>
+  <div class="resultados">
+    <img src="/img/antes.jpg">
+    <img src="/img/depois.jpg">
+  </div>
+</section>
+
+<!-- POR QUE ESCOLHER -->
+<section>
+  <h2>Por que escolher?</h2>
+  <div class="card">
+    <p>Atendimento rápido</p>
+    <p>Equipamento profissional</p>
+    <p>Preço justo</p>
+    <p>Serviço confiável</p>
+  </div>
+</section>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/5567981194737" class="whatsapp" target="_blank">
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+</a>
+
+<script>
+  const slider = document.getElementById('slider');
+  const before = document.getElementById('before');
+  const handle = document.getElementById('handle');
+
+  let isDragging = false;
+
+  handle.addEventListener('mousedown', () => isDragging = true);
+  window.addEventListener('mouseup', () => isDragging = false);
+
+  window.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+
+    const rect = slider.getBoundingClientRect();
+    let x = e.clientX - rect.left;
+
+    if (x < 0) x = 0;
+    if (x > rect.width) x = rect.width;
+
+    before.style.width = x + 'px';
+    handle.style.left = x + 'px';
+  });
+</script>
+
+</body>
+</html>
