@@ -3,129 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portão Pro | Segurança e Automação em Campo Grande</title>
+    <title>Portão Pro | Engenharia de Acessos em Campo Grande</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
     
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #000; color: #ededed; }
-        h1, h2, h3 { font-family: 'Space+Grotesk', sans-serif; }
-        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .marquee { display: flex; overflow: hidden; user-select: none; gap: 2rem; }
-        .marquee-content { flex-shrink: 0; display: flex; justify-content: space-around; min-width: 100%; gap: 2rem; animation: scroll 20s linear infinite; }
-        @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-100%); } }
+        :root { --accent: #3b82f6; }
+        body { font-family: 'Inter', sans-serif; background-color: #000; color: #a1a1aa; }
+        h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; color: #fff; }
+        
+        /* Efeito de Vidro e Gradientes Linear-style */
+        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .hero-glow { background: radial-gradient(circle at 50% -20%, rgba(59, 130, 246, 0.15), transparent 70%); }
+        
+        /* Marquee Optimization */
+        @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+        .animate-scroll { animation: scroll 30s linear infinite; width: max-content; }
+        
+        /* Micro-interactions */
+        .card-hover:hover { border-color: rgba(255, 255, 255, 0.2); background: rgba(255, 255, 255, 0.04); transition: all 0.3s ease; }
     </style>
 </head>
-<body class="antialiased">
+<body class="antialiased hero-glow">
 
-    <nav class="fixed top-0 w-full z-50 border-b border-white/10 glass">
-        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-            <div class="text-xl font-bold tracking-tighter">PORTÃO<span class="text-blue-500">PRO</span></div>
-            <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-400">
-                <a href="#servicos" class="hover:text-white transition">Serviços</a>
-                <a href="#faq" class="hover:text-white transition">Dúvidas</a>
-                <a href="#contato" class="hover:text-white transition text-white border border-white/20 px-4 py-1.5 rounded-full hover:bg-white/10">Orçamento</a>
+    <nav class="fixed top-0 w-full z-[100] border-b border-white/5 glass">
+        <div class="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between">
+            <div class="flex items-center gap-2 font-bold tracking-tighter text-white">
+                <div class="w-6 h-6 bg-blue-600 rounded-sm"></div>
+                PORTÃO<span class="text-blue-500">PRO</span>
+            </div>
+            <div class="hidden md:flex items-center space-x-6 text-[13px] font-medium">
+                <a href="#servicos" class="hover:text-white transition-colors">Serviços</a>
+                <a href="#faq" class="hover:text-white transition-colors">Suporte</a>
+                <a href="#contato" class="bg-white text-black px-4 py-1.5 rounded-full hover:bg-gray-200 transition-all">Orçamento Express</a>
             </div>
         </div>
     </nav>
 
-    <section class="pt-32 pb-20 px-6">
-        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-                <span class="inline-block px-3 py-1 text-xs font-semibold tracking-wider text-blue-400 uppercase bg-blue-400/10 rounded-full mb-4">Especialistas em Campo Grande</span>
-                <h1 class="text-5xl lg:text-7xl font-bold leading-tight mb-6">A evolução da segurança residencial.</h1>
-                <p class="text-gray-400 text-lg mb-8 max-w-lg">Instalação e manutenção de portões eletrônicos com precisão milimétrica e tecnologia de ponta para sua casa ou empresa.</p>
-                <div class="flex gap-4">
-                    <a href="#contato" class="bg-white text-black px-8 py-3 rounded-md font-semibold hover:bg-gray-200 transition">Solicitar Visita</a>
-                    <a href="#" class="px-8 py-3 rounded-md font-semibold border border-white/10 hover:bg-white/5 transition">Ver Portfólio</a>
+    <section class="pt-40 pb-24 px-6">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+            <div class="space-y-8">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-500/20 bg-blue-500/5 text-[12px] font-medium text-blue-400">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                    </span>
+                    Disponível agora em Campo Grande
+                </div>
+                <h1 class="text-6xl lg:text-8xl font-bold tracking-tight leading-[0.95]">
+                    Sua entrada, <br><span class="text-transparent bg-clip-text bg-gradient-to-b from-white to-white/40">inteligente.</span>
+                </h1>
+                <p class="text-xl leading-relaxed max-w-md">
+                    Automação de alto padrão e manutenção preditiva para portões residenciais e industriais.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <button class="bg-white text-black px-8 py-4 rounded-lg font-semibold hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-all">Agendar Instalação</button>
+                    <button class="px-8 py-4 rounded-lg font-semibold border border-white/10 hover:bg-white/5 transition-all">Conhecer Tecnologia</button>
                 </div>
             </div>
-            <div class="relative">
-                <img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80&w=1200" alt="Motor de portão" class="rounded-2xl border border-white/10 shadow-2xl">
+            <div class="relative group">
+                <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+                <img src="https://images.unsplash.com/photo-1517646287270-a5a9ca602e5c?auto=format&fit=crop&q=80&w=1200" alt="Hardware de precisão" class="relative rounded-2xl border border-white/10 grayscale-[0.5] group-hover:grayscale-0 transition-all duration-700">
             </div>
         </div>
     </section>
 
-    <div class="py-12 border-y border-white/10 overflow-hidden">
-        <div class="marquee">
-            <div class="marquee-content">
-                <span class="text-2xl font-bold opacity-30 px-10">PPA</span>
-                <span class="text-2xl font-bold opacity-30 px-10">ROSSI</span>
-                <span class="text-2xl font-bold opacity-30 px-10">PECCININ</span>
-                <span class="text-2xl font-bold opacity-30 px-10">INTELBRAS</span>
-                <span class="text-2xl font-bold opacity-30 px-10">GAREN</span>
-                <span class="text-2xl font-bold opacity-30 px-10">PPA</span>
-                <span class="text-2xl font-bold opacity-30 px-10">ROSSI</span>
+    <div class="py-16 border-y border-white/5 bg-white/[0.01]">
+        <div class="flex overflow-hidden group">
+            <div class="flex animate-scroll whitespace-nowrap items-center">
+                <span class="text-4xl font-bold tracking-tighter opacity-20 hover:opacity-100 transition-opacity px-12">PPA</span>
+                <span class="text-4xl font-bold tracking-tighter opacity-20 hover:opacity-100 transition-opacity px-12">ROSSI</span>
+                <span class="text-4xl font-bold tracking-tighter opacity-20 hover:opacity-100 transition-opacity px-12">PECCININ</span>
+                <span class="text-4xl font-bold tracking-tighter opacity-20 hover:opacity-100 transition-opacity px-12">INTELBRAS</span>
+                <span class="text-4xl font-bold tracking-tighter opacity-20 hover:opacity-100 transition-opacity px-12">GAREN</span>
+                <span class="text-4xl font-bold tracking-tighter opacity-20 px-12">PPA</span>
+                <span class="text-4xl font-bold tracking-tighter opacity-20 px-12">ROSSI</span>
+                <span class="text-4xl font-bold tracking-tighter opacity-20 px-12">PECCININ</span>
+                <span class="text-4xl font-bold tracking-tighter opacity-20 px-12">INTELBRAS</span>
+                <span class="text-4xl font-bold tracking-tighter opacity-20 px-12">GAREN</span>
             </div>
         </div>
     </div>
 
-    <section id="faq" class="py-24 px-6 bg-[#050505]">
-        <div class="max-w-3xl mx-auto text-center mb-16">
-            <h2 class="text-4xl font-bold mb-4">Dúvidas Frequentes</h2>
-            <p class="text-gray-400">Tudo o que você precisa saber sobre nossos serviços em MS.</p>
-        </div>
-        <div class="max-w-3xl mx-auto space-y-4">
-            <div class="border border-white/10 rounded-xl overflow-hidden">
-                <button class="w-full p-6 text-left flex justify-between items-center hover:bg-white/5 transition" onclick="this.nextElementSibling.classList.toggle('hidden')">
-                    <span class="font-medium">Quanto tempo leva uma instalação padrão?</span>
-                    <span class="text-gray-500">+</span>
-                </button>
-                <div class="p-6 pt-0 text-gray-400 hidden border-t border-white/5">
-                    Realizamos a instalação técnica completa em um período médio de 3 a 5 horas, garantindo a calibração perfeita do motor e sensores.
-                </div>
+    <section id="faq" class="py-32 px-6">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-3 gap-16">
+            <div class="lg:col-span-1">
+                <h2 class="text-4xl font-bold mb-4 tracking-tight">Perguntas <br>Frequentes</h2>
+                <p class="text-gray-500">Não encontrou o que procura? <br><a href="#" class="text-blue-500 underline decoration-blue-500/30 underline-offset-4">Fale com um técnico.</a></p>
             </div>
-            <div class="border border-white/10 rounded-xl overflow-hidden">
-                <button class="w-full p-6 text-left flex justify-between items-center hover:bg-white/5 transition" onclick="this.nextElementSibling.classList.toggle('hidden')">
-                    <span class="font-medium">Vocês atendem todos os bairros de Campo Grande?</span>
-                    <span class="text-gray-500">+</span>
-                </button>
-                <div class="p-6 pt-0 text-gray-400 hidden border-t border-white/5">
-                    Sim, cobrimos todas as regiões de CG e proximidades, com atendimento rápido para chamados de manutenção.
+            <div class="lg:col-span-2 space-y-3">
+                <div class="border border-white/10 rounded-xl glass">
+                    <button class="w-full p-6 text-left flex justify-between items-center group" onclick="this.nextElementSibling.classList.toggle('hidden')">
+                        <span class="text-white font-medium group-hover:text-blue-400 transition-colors">Qual a garantia dos motores instalados?</span>
+                        <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                    </button>
+                    <div class="p-6 pt-0 text-gray-400 hidden animate-in fade-in slide-in-from-top-1">
+                        Trabalhamos com garantia padrão de 1 ano para hardware e 90 dias para mão de obra especializada, conforme normas técnicas vigentes.
+                    </div>
                 </div>
-            </div>
+                </div>
         </div>
     </section>
 
-    <section id="contato" class="py-24 px-6 border-t border-white/10">
-        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16">
-            <div>
-                <h2 class="text-4xl font-bold mb-6">Pronto para digitalizar seu acesso?</h2>
-                <p class="text-gray-400 mb-8">Preencha os dados e nosso consultor técnico entrará em contato em menos de 2 horas.</p>
-                <div class="space-y-4">
-                    <div class="flex items-center gap-4 text-gray-300">
-                        <div class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center">📍</div>
-                        Campo Grande, MS
-                    </div>
+    <section id="contato" class="py-32 px-6 border-t border-white/5 bg-[#030303]">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-24 items-start">
+            <div class="space-y-6">
+                <h2 class="text-5xl font-bold tracking-tighter">Vamos blindar <br>seu acesso?</h2>
+                <p class="text-xl text-gray-500 leading-relaxed">Campo Grande exige segurança rápida. Deixe seu contato e enviaremos um técnico para avaliação sem custo.</p>
+                <div class="p-6 rounded-2xl border border-white/5 bg-white/[0.02]">
+                    <p class="text-sm font-medium text-white mb-2">Suporte Direto</p>
+                    <p class="text-2xl font-bold text-blue-500">(67) 99999-0000</p>
                 </div>
             </div>
-            <form class="glass p-8 rounded-2xl space-y-4">
-                <div>
-                    <label class="block text-sm font-medium mb-2 text-gray-400">Nome Completo</label>
-                    <input type="text" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition" placeholder="Seu nome">
+            <form class="space-y-4">
+                <div class="grid grid-cols-2 gap-4">
+                    <input type="text" placeholder="Nome" class="bg-white/5 border border-white/10 rounded-lg p-4 focus:ring-1 focus:ring-blue-500 outline-none text-white transition-all">
+                    <input type="tel" placeholder="WhatsApp" class="bg-white/5 border border-white/10 rounded-lg p-4 focus:ring-1 focus:ring-blue-500 outline-none text-white transition-all">
                 </div>
-                <div>
-                    <label class="block text-sm font-medium mb-2 text-gray-400">WhatsApp</label>
-                    <input type="tel" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition" placeholder="(67) 99999-9999">
-                </div>
-                <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-lg transition shadow-lg shadow-blue-600/20">Solicitar Orçamento Grátis</button>
+                <textarea rows="4" placeholder="Descreva sua necessidade (Ex: Instalação rápida, Manutenção PPA...)" class="w-full bg-white/5 border border-white/10 rounded-lg p-4 focus:ring-1 focus:ring-blue-500 outline-none text-white transition-all"></textarea>
+                <button class="w-full bg-blue-600 text-white font-bold py-5 rounded-lg hover:bg-blue-500 transition-all transform hover:-translate-y-1">Enviar Solicitação de Orçamento</button>
             </form>
         </div>
     </section>
 
-    <div id="cookie-banner" class="fixed bottom-6 right-6 left-6 md:left-auto md:w-96 glass p-6 rounded-2xl z-[100] border border-white/20 animate-bounce-subtle">
-        <p class="text-sm text-gray-300 mb-4">Usamos cookies para melhorar sua experiência de navegação em nossa plataforma.</p>
-        <div class="flex gap-3">
-            <button onclick="document.getElementById('cookie-banner').remove()" class="flex-1 bg-white text-black text-xs font-bold py-2 rounded-md">Aceitar</button>
-            <button onclick="document.getElementById('cookie-banner').remove()" class="flex-1 text-xs font-bold py-2 border border-white/10 rounded-md">Recusar</button>
+    <div id="cookie-banner" class="fixed bottom-8 right-8 w-[340px] glass p-6 rounded-2xl z-[200] shadow-2xl border border-white/20">
+        <div class="flex items-start gap-4">
+            <div class="mt-1">🍪</div>
+            <div>
+                <p class="text-[13px] text-white font-medium mb-1">Privacidade & Cookies</p>
+                <p class="text-[12px] text-gray-500 leading-tight mb-4">Melhoramos sua experiência através de dados técnicos.</p>
+                <div class="flex gap-2">
+                    <button onclick="document.getElementById('cookie-banner').remove()" class="text-[11px] font-bold bg-white text-black px-3 py-1.5 rounded-md">Aceitar</button>
+                    <button onclick="document.getElementById('cookie-banner').remove()" class="text-[11px] font-bold border border-white/10 text-white px-3 py-1.5 rounded-md">Configurar</button>
+                </div>
+            </div>
         </div>
     </div>
 
-    <footer class="py-12 border-t border-white/10">
-        <div class="max-w-7xl mx-auto px-6 text-center text-gray-500 text-sm">
-            © 2026 Portão Pro Campo Grande. Built for performance.
+    <footer class="py-20 border-t border-white/5 text-center">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-[12px] uppercase tracking-[0.2em] text-gray-600 font-bold mb-4">Portão Pro MS</div>
+            <p class="text-gray-500 text-[13px]">© 2026 Engenharia de Acessos. Campo Grande, MS. <br>Design by Front-end Senior Stack.</p>
         </div>
     </footer>
 
