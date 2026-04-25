@@ -3,226 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portão Pro | Engenharia em Automação e Manutenção</title>
-    
+    <title>Portão Pro | Automação de Elite em Campo Grande</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Inter', 'sans-serif'] },
-                    colors: {
-                        deep: '#030303',
-                        surface: '#0A0A0B',
-                        brand: '#2563EB',
-                        border: 'rgba(255,255,255,0.08)'
-                    }
-                }
-            }
-        }
-    </script>
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #030303; color: #FFFFFF; }
-        .glass { background: rgba(10, 10, 11, 0.8); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.05); }
-        
-        /* Animação Marquee (Logos correndo) */
-        @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-        .animate-marquee { animation: marquee 20s linear infinite; }
-
-        /* Card com gradiente de borda dinâmico */
-        .feature-card {
-            position: relative;
-            background: #0A0A0B;
-            border-radius: 20px;
-            padding: 2px;
-            overflow: hidden;
-        }
-        .feature-card::before {
-            content: "";
-            position: absolute; inset: 0;
-            background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(37, 99, 235, 0.4) 0%, transparent 50%);
-            opacity: 0; transition: opacity 0.3s;
-        }
-        .feature-card:hover::before { opacity: 1; }
-        .card-content { background: #0A0A0B; border-radius: 18px; position: relative; z-index: 1; }
+        body { font-family: 'Inter', sans-serif; background-color: #000; color: #fff; }
+        h1, h2, h3, .font-heading { font-family: 'Space Grotesk', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .marquee { display: flex; overflow: hidden; user-select: none; gap: 2rem; }
+        .marquee-content { flex-shrink: 0; display: flex; justify-content: space-around; min-width: 100%; gap: 2rem; animation: scroll 20s linear infinite; }
+        @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-100%); } }
     </style>
 </head>
-<body x-data="{ cookie: false }" class="antialiased">
+<body class="antialiased">
 
-    <div x-show="!cookie" class="fixed bottom-8 left-8 right-8 md:w-[450px] z-[100] glass p-6 rounded-3xl shadow-2xl flex flex-col gap-4">
-        <div class="flex items-center gap-3">
-            <span class="flex h-3 w-3 bg-brand rounded-full"></span>
-            <h5 class="text-sm font-bold tracking-tight">Privacidade e Termos Técnicos</h5>
-        </div>
-        <p class="text-xs text-gray-400 leading-relaxed">Ao navegar, você concorda com a coleta de dados para otimização do seu atendimento e agendamento técnico imediato.</p>
-        <button @click="cookie = true" class="bg-white text-black text-[10px] font-black py-3 rounded-xl uppercase tracking-widest hover:bg-brand hover:text-white transition-all">Aceitar Termos</button>
-    </div>
-
-    <nav class="fixed top-0 w-full z-50 glass">
-        <div class="max-w-7xl mx-auto px-8 h-24 flex justify-between items-center">
-            <div class="text-2xl font-black tracking-tighter uppercase flex items-center gap-3">
-                <span class="bg-brand w-10 h-10 rounded-xl flex items-center justify-center italic">P</span>
-                PORTÃO<span class="text-brand">PRO</span>
+    <nav class="fixed top-0 w-full z-50 glass border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="text-xl font-heading font-bold tracking-tighter">PORTÃO<span class="text-blue-500">PRO</span></div>
+            <div class="hidden md:flex gap-8 text-sm font-medium text-zinc-400">
+                <a href="#solucoes" class="hover:text-white transition-colors">Soluções</a>
+                <a href="#tecnologia" class="hover:text-white transition-colors">Tecnologia</a>
+                <a href="#faq" class="hover:text-white transition-colors">Suporte</a>
             </div>
-            
-            <div class="hidden lg:flex items-center gap-8">
-                <a href="#especialidades" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white">Especialidades</a>
-                <a href="#processo" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white">Processo</a>
-                <a href="#faq" class="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-white">FAQ</a>
-                <a href="https://wa.me/5500000000000" class="bg-brand px-6 py-3 rounded-xl text-xs font-black uppercase tracking-widest hover:scale-105 transition-transform">Emergência</a>
-            </div>
+            <a href="#contato" class="bg-white text-black px-4 py-2 rounded-md text-sm font-semibold hover:bg-zinc-200 transition-all">Orçamento rápido</a>
         </div>
     </nav>
 
-    <section class="pt-60 pb-40 px-8 relative overflow-hidden">
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-brand/10 via-transparent to-transparent -z-10"></div>
-        
-        <div class="max-w-7xl mx-auto text-center">
-            <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-white/5 bg-white/5 text-[10px] font-bold tracking-[0.2em] text-gray-400 mb-10">
-                <span class="text-brand">●</span> ENGENHARIA E CONSERTO EM CAMPO GRANDE
-            </div>
-            <h1 class="text-6xl md:text-[120px] font-black leading-[0.85] tracking-tighter mb-12">
-                O MOVIMENTO <br> <span class="italic text-brand">PERFEITO.</span>
-            </h1>
-            <p class="text-lg md:text-2xl text-gray-500 max-w-3xl mx-auto mb-16 font-medium">
-                Especialistas em instalação, manutenção preventiva e reparo de motores de alta tecnologia. O seu portão com funcionamento de fábrica ainda hoje.
-            </p>
-            <div class="flex flex-col md:flex-row justify-center gap-6">
-                <a href="https://wa.me/5500000000000" class="bg-white text-black px-12 py-6 rounded-2xl font-black text-lg hover:bg-brand hover:text-white transition-all">
-                    SOLICITAR AGORA
-                </a>
-                <div class="flex items-center gap-4 px-8 py-6 border border-white/10 rounded-2xl text-gray-400">
-                    <i class="fas fa-shield-check text-brand text-xl"></i>
-                    <span class="text-sm font-bold uppercase tracking-widest">Garantia Total</span>
+    <section class="pt-32 pb-20 px-6">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="inline-block px-3 py-1 rounded-full border border-blue-500/30 text-blue-400 text-xs font-medium mb-6">Disponível em Campo Grande - MS</span>
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6">Segurança que se move com precisão.</h1>
+                <p class="text-zinc-400 text-lg mb-8 max-w-lg">Instalação e manutenção de portões eletrônicos com motores de alta performance e blindagem eletrônica.</p>
+                <div class="flex flex-wrap gap-4">
+                    <button class="bg-blue-600 hover:bg-blue-700 px-8 py-4 rounded-lg font-semibold transition-all">Agendar Visita Técnica</button>
+                    <button class="glass px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-all">Ver Modelos</button>
                 </div>
+            </div>
+            <div class="relative">
+                <img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80&w=800" alt="Motor de portão industrial" class="rounded-2xl border border-white/10 grayscale hover:grayscale-0 transition-all duration-700 shadow-2xl">
             </div>
         </div>
     </section>
 
-    <div class="py-12 border-y border-white/5 bg-surface overflow-hidden flex">
-        <div class="flex gap-20 animate-marquee whitespace-nowrap items-center">
-            <span class="text-4xl font-black opacity-20 hover:opacity-100 transition-opacity">ROSSI</span>
-            <span class="text-4xl font-black opacity-20 hover:opacity-100 transition-opacity">PPA</span>
-            <span class="text-4xl font-black opacity-20 hover:opacity-100 transition-opacity">PECCININ</span>
-            <span class="text-4xl font-black opacity-20 hover:opacity-100 transition-opacity">GAREN</span>
-            <span class="text-4xl font-black opacity-20 hover:opacity-100 transition-opacity">INTELBRAS</span>
-            <span class="text-4xl font-black opacity-20 hover:opacity-100 transition-opacity">ROSSI</span>
-            <span class="text-4xl font-black opacity-20 hover:opacity-100 transition-opacity">PPA</span>
-            <span class="text-4xl font-black opacity-20 hover:opacity-100 transition-opacity">PECCININ</span>
-            <span class="text-4xl font-black opacity-20 hover:opacity-100 transition-opacity">GAREN</span>
-            <span class="text-4xl font-black opacity-20 hover:opacity-100 transition-opacity">INTELBRAS</span>
+    <section class="py-12 border-y border-white/5 overflow-hidden">
+        <div class="marquee">
+            <div class="marquee-content">
+                <span class="text-zinc-500 font-heading text-xl font-bold italic">PPA</span>
+                <span class="text-zinc-500 font-heading text-xl font-bold italic">ROSSI</span>
+                <span class="text-zinc-500 font-heading text-xl font-bold italic">PECCININ</span>
+                <span class="text-zinc-500 font-heading text-xl font-bold italic">GAREN</span>
+                <span class="text-zinc-500 font-heading text-xl font-bold italic">INTELBRAS</span>
+                <span class="text-zinc-500 font-heading text-xl font-bold italic">SEG</span>
+            </div>
+            <div class="marquee-content">
+                <span class="text-zinc-500 font-heading text-xl font-bold italic">PPA</span>
+                <span class="text-zinc-500 font-heading text-xl font-bold italic">ROSSI</span>
+                <span class="text-zinc-500 font-heading text-xl font-bold italic">PECCININ</span>
+                <span class="text-zinc-500 font-heading text-xl font-bold italic">GAREN</span>
+                <span class="text-zinc-500 font-heading text-xl font-bold italic">INTELBRAS</span>
+                <span class="text-zinc-500 font-heading text-xl font-bold italic">SEG</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-24 px-6">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl font-bold mb-12 text-center">Perguntas Frequentes</h2>
+            <div class="space-y-4">
+                <details class="group glass rounded-xl overflow-hidden" open>
+                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                        <span class="font-medium">Qual o tempo médio de instalação?</span>
+                        <span class="transition group-open:rotate-180">
+                            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                        </span>
+                    </summary>
+                    <div class="px-6 pb-6 text-zinc-400 text-sm">Realizamos a instalação completa em Campo Grande dentro de 4 a 6 horas para modelos residenciais padrão.</div>
+                </details>
+                <details class="group glass rounded-xl overflow-hidden">
+                    <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                        <span class="font-medium">Vocês atendem emergências 24h?</span>
+                        <span class="transition group-open:rotate-180">
+                            <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                        </span>
+                    </summary>
+                    <div class="px-6 pb-6 text-zinc-400 text-sm">Sim, possuímos uma equipe de prontidão para reparos críticos em condomínios e empresas.</div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="py-24 px-6 bg-zinc-950">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16">
+            <div>
+                <h2 class="text-4xl font-bold mb-6">Inicie seu projeto hoje.</h2>
+                <p class="text-zinc-400 mb-8 text-lg">Preencha os dados ao lado. Nossa equipe técnica entrará em contato em até 15 minutos (horário comercial).</p>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-4 text-zinc-300">
+                        <div class="w-10 h-10 rounded-full glass flex items-center justify-center">📍</div>
+                        Campo Grande, MS
+                    </div>
+                </div>
+            </div>
+            <form class="glass p-8 rounded-2xl border-white/10 space-y-4">
+                <div class="grid md:grid-cols-2 gap-4">
+                    <input type="text" placeholder="Nome" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 focus:border-blue-500 outline-none transition-all">
+                    <input type="tel" placeholder="WhatsApp" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 focus:border-blue-500 outline-none transition-all">
+                </div>
+                <select class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 focus:border-blue-500 outline-none transition-all text-zinc-400">
+                    <option>Tipo de Serviço</option>
+                    <option>Nova Instalação</option>
+                    <option>Manutenção</option>
+                    <option>Troca de Placa/Controle</option>
+                </select>
+                <textarea rows="4" placeholder="Como podemos ajudar?" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 focus:border-blue-500 outline-none transition-all"></textarea>
+                <button class="w-full bg-white text-black font-bold py-4 rounded-lg hover:bg-blue-500 hover:text-white transition-all">Solicitar Orçamento Grátis</button>
+            </form>
+        </div>
+    </section>
+
+    <div id="cookie-banner" class="fixed bottom-6 left-6 right-6 md:left-auto md:w-[400px] glass p-6 rounded-2xl z-[100] border-white/20">
+        <p class="text-sm text-zinc-300 mb-4">Utilizamos cookies para otimizar sua experiência de navegação e segurança.</p>
+        <div class="flex gap-3">
+            <button onclick="document.getElementById('cookie-banner').remove()" class="bg-white text-black text-xs font-bold px-4 py-2 rounded-md hover:bg-zinc-200">Aceitar tudo</button>
+            <button onclick="document.getElementById('cookie-banner').remove()" class="text-zinc-400 text-xs font-medium hover:text-white">Recusar</button>
         </div>
     </div>
 
-    <section id="especialidades" class="py-40 px-8">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-xs font-black tracking-[0.5em] text-brand mb-6 uppercase">O que fazemos</h2>
-            <h3 class="text-4xl md:text-6xl font-black mb-24 tracking-tighter">SOLUÇÕES ESPECÍFICAS.</h3>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="feature-card group" onmousemove="this.style.setProperty('--x', event.offsetX + 'px'); this.style.setProperty('--y', event.offsetY + 'px')">
-                    <div class="card-content p-10 h-full">
-                        <i class="fas fa-engine-warning text-3xl text-brand mb-8"></i>
-                        <h4 class="text-2xl font-bold mb-4">Motores de Tração</h4>
-                        <p class="text-gray-500 text-sm leading-relaxed">Reparo de engrenagens, estator e sistemas de freio eletrônico. Calibração precisa para evitar desgaste prematuro.</p>
-                    </div>
-                </div>
-
-                <div class="feature-card group" onmousemove="this.style.setProperty('--x', event.offsetX + 'px'); this.style.setProperty('--y', event.offsetY + 'px')">
-                    <div class="card-content p-10 h-full">
-                        <i class="fas fa-tools text-3xl text-brand mb-8"></i>
-                        <h4 class="text-2xl font-bold mb-4">Conserto Mecânico</h4>
-                        <p class="text-gray-500 text-sm leading-relaxed">Troca de cabos de aço reforçados, roldanas com rolamento blindado e nivelamento de trilhos estruturais.</p>
-                    </div>
-                </div>
-
-                <div class="feature-card group" onmousemove="this.style.setProperty('--x', event.offsetX + 'px'); this.style.setProperty('--y', event.offsetY + 'px')">
-                    <div class="card-content p-10 h-full">
-                        <i class="fas fa-bolt text-3xl text-brand mb-8"></i>
-                        <h4 class="text-2xl font-bold mb-4">Instalação Elite</h4>
-                        <p class="text-gray-00 text-sm leading-relaxed">Projetos de automação do zero. Configuração de centrais inteligentes com controle via smartphone e travas magnéticas.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="processo" class="py-40 px-8 bg-surface">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-32 items-center">
-                <div>
-                    <h2 class="text-5xl font-black tracking-tighter mb-10 leading-none text-white">COMO TRABALHAMOS.</h2>
-                    <div class="space-y-12">
-                        <div class="flex gap-6">
-                            <span class="w-12 h-12 rounded-full border border-brand flex items-center justify-center font-bold text-brand">01</span>
-                            <div>
-                                <h5 class="font-bold text-lg mb-2">Diagnóstico Digital</h5>
-                                <p class="text-gray-500 text-sm">Analisamos a placa eletrônica e o torque do motor para identificar a falha exata.</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-6">
-                            <span class="w-12 h-12 rounded-full border border-brand flex items-center justify-center font-bold text-brand">02</span>
-                            <div>
-                                <h5 class="font-bold text-lg mb-2">Execução Técnica</h5>
-                                <p class="text-gray-500 text-sm">Substituição de peças por componentes originais com ferramentas de precisão industrial.</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-6">
-                            <span class="w-12 h-12 rounded-full border border-brand flex items-center justify-center font-bold text-brand">03</span>
-                            <div>
-                                <h5 class="font-bold text-lg mb-2">Entrega e Teste</h5>
-                                <p class="text-gray-500 text-sm">Certificação de funcionamento, lubrificação total e entrega da garantia técnica.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="relative">
-                    <div class="aspect-square bg-brand/10 rounded-[40px] border border-brand/20 flex items-center justify-center overflow-hidden">
-                        <i class="fas fa-screwdriver-wrench text-[150px] text-brand opacity-20"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="pt-40 pb-20 px-8 border-t border-white/5">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-20">
-            <div>
-                <div class="text-3xl font-black tracking-tighter mb-8">PORTÃO<span class="text-brand">PRO</span></div>
-                <p class="text-gray-500 max-w-xs text-sm leading-relaxed">
-                    A maior autoridade técnica em Campo Grande/MS para manutenção e instalação de portões automáticos.
-                </p>
-            </div>
-            
-            <div class="text-right flex flex-col items-end">
-                <span class="text-[10px] font-black tracking-[0.5em] text-brand mb-4 uppercase">Plantão 24 Horas</span>
-                <a href="tel:00000000000" class="text-4xl md:text-7xl font-black tracking-tighter hover:text-brand transition-colors">
-                    (00) 00000-0000
-                </a>
-            </div>
-        </div>
-        
-        <div class="max-w-7xl mx-auto mt-40 pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between text-[9px] font-black text-gray-700 uppercase tracking-[0.6em]">
-            <span>© 2026 Portão Pro Engineering MS</span>
-            <div class="flex gap-10 mt-4 md:mt-0">
-                <a href="#" class="hover:text-white transition-colors">Instagram</a>
-                <a href="#" class="hover:text-white transition-colors">Políticas</a>
+    <footer class="py-12 border-t border-white/10 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:row justify-between items-center gap-6">
+            <p class="text-zinc-500 text-xs">© 2026 Portão Pro Campo Grande. Todos os direitos reservados.</p>
+            <div class="flex gap-6 text-zinc-500 text-xs">
+                <a href="#" class="hover:text-white">Privacidade</a>
+                <a href="#" class="hover:text-white">Termos de Uso</a>
             </div>
         </div>
     </footer>
-
-    <a href="https://wa.me/5500000000000" class="fixed bottom-10 right-10 w-20 h-20 bg-[#25D366] text-white rounded-[24px] flex items-center justify-center text-4xl shadow-[0_20px_50px_rgba(37,211,102,0.3)] hover:scale-110 active:scale-95 transition-all z-[90]">
-        <i class="fab fa-whatsapp"></i>
-    </a>
 
 </body>
 </html>
