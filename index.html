@@ -1,26 +1,29 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portão Pro | Soluções de Elite</title>
+    <title>Portão Pro | Engenharia de Automação</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: { sans: ['Outfit', 'sans-serif'] },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        impact: ['Bebas Neue', 'cursive'],
+                    },
                     colors: {
-                        bgMain: '#0A0C10',
-                        accent: '#3B82F6', // Azul Elétrico
-                        surface: '#161B22'
+                        nero: '#030303',
+                        electric: '#00F0FF',
+                        phantom: '#111111',
                     }
                 }
             }
@@ -28,158 +31,162 @@
     </script>
 
     <style>
-        body { background-color: #0A0C10; color: #F0F6FC; }
-        
-        /* Efeito de Vidro (Glassmorphism) */
-        .glass-card {
-            background: rgba(22, 27, 34, 0.6);
-            backdrop-filter: blur(12px);
+        body { background-color: #030303; color: #ffffff; overflow-x: hidden; }
+
+        /* Efeito Aurora de Fundo */
+        .aurora {
+            position: absolute; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% -20%, #00f0ff33 0%, transparent 50%),
+                        radial-gradient(circle at 0% 100%, #00f0ff11 0%, transparent 40%);
+            z-index: -1; pointer-events: none;
+        }
+
+        /* Bento Card Elite */
+        .bento-card {
+            background: rgba(17, 17, 17, 0.7);
             border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(20px);
+            border-radius: 32px;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative; overflow: hidden;
         }
-        .glass-card:hover {
-            border-color: #3B82F6;
-            background: rgba(59, 130, 246, 0.05);
-            transform: translateY(-8px);
+        .bento-card:hover {
+            border-color: #00F0FF;
+            transform: translateY(-5px);
+            box-shadow: 0 0 40px rgba(0, 240, 255, 0.1);
         }
 
-        /* Botão Magnético */
-        .btn-prime {
-            background: #3B82F6;
-            color: white;
+        /* Botão Cyber */
+        .cyber-button {
+            background: #00F0FF;
+            color: #000;
+            font-weight: 900;
+            letter-spacing: 1px;
             padding: 20px 40px;
-            border-radius: 14px;
-            font-weight: 700;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            box-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
+            border-radius: 16px;
+            clip-path: polygon(0 0, 100% 0, 100% 70%, 85% 100%, 0 100%);
             transition: all 0.3s ease;
+            box-shadow: 0 10px 0px #008891;
         }
-        .btn-prime:hover {
-            box-shadow: 0 0 50px rgba(59, 130, 246, 0.5);
-            transform: scale(1.02);
+        .cyber-button:hover {
+            transform: translateY(3px);
+            box-shadow: 0 2px 0px #008891;
+            filter: brightness(1.1);
         }
 
-        /* Texto com Gradiente Moderno */
-        .gradient-text {
-            background: linear-gradient(135deg, #FFFFFF 0%, #3B82F6 100%);
+        /* Texto Shimmer */
+        .shimmer {
+            background: linear-gradient(90deg, #fff, #00F0FF, #fff);
+            background-size: 200% auto;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            animation: shimmer 3s linear infinite;
+        }
+        @keyframes shimmer { to { background-position: 200% center; } }
+
+        .line-glow {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #00F0FF, transparent);
         }
     </style>
 </head>
 <body class="antialiased">
 
-    <nav class="fixed top-0 w-full z-50 px-6 py-6 border-b border-white/5 bg-bgMain/80 backdrop-blur-md">
-        <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <div class="text-2xl font-extrabold tracking-tighter uppercase">
-                PORTÃO<span class="text-accent italic">PRO</span>
+    <div class="aurora"></div>
+
+    <nav class="fixed top-0 w-full z-[100] py-8 px-10">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="font-impact text-4xl tracking-widest uppercase italic">
+                PORTÃO<span class="text-electric">PRO</span>
             </div>
-            <div class="bg-white/5 px-4 py-1.5 rounded-full border border-white/10 flex items-center gap-2">
-                <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                <span class="text-[10px] font-bold uppercase tracking-widest opacity-70">Disponível em CG</span>
+            <div class="hidden md:flex gap-1 bg-white/5 p-1 rounded-2xl border border-white/10 backdrop-blur-md">
+                <div class="px-6 py-2 rounded-xl bg-electric/10 border border-electric/20 text-[10px] font-black uppercase tracking-[0.3em] text-electric">
+                    Campo Grande • MS
+                </div>
             </div>
         </div>
     </nav>
 
-    <main class="relative pt-48 pb-32 px-6 overflow-hidden">
-        <div class="absolute -top-24 -left-24 w-96 h-96 bg-accent/20 rounded-full blur-[120px]"></div>
-        <div class="absolute top-1/2 -right-24 w-64 h-64 bg-accent/10 rounded-full blur-[100px]"></div>
-
-        <div class="max-w-6xl mx-auto text-center">
-            <h1 class="text-5xl md:text-8xl font-extrabold mb-8 tracking-tighter leading-none">
-                <span class="gradient-text">O PORTÃO TRAVOU?</span> <br>
-                <span class="text-white">NÓS RESOLVEMOS.</span>
+    <section class="pt-56 pb-32 px-10">
+        <div class="max-w-7xl mx-auto flex flex-col items-center text-center">
+            <div class="inline-block px-4 py-1 rounded-full border border-white/10 bg-white/5 text-[10px] font-bold uppercase tracking-[0.4em] mb-8 animate-bounce">
+                Pronto para Atendimento
+            </div>
+            <h1 class="font-sans text-6xl md:text-9xl font-black tracking-tighter leading-[0.85] mb-10">
+                O PORTÃO <br> 
+                <span class="shimmer uppercase">TRAVOU?</span>
             </h1>
-            
-            <p class="text-lg md:text-xl text-slate-400 mb-12 max-w-2xl mx-auto leading-relaxed">
-                Manutenção especializada e conserto imediato de motores, cabos e placas em toda <strong>Campo Grande</strong>. Tecnologia e rapidez no atendimento.
+            <p class="text-slate-400 text-lg md:text-2xl max-w-3xl mb-16 font-light leading-relaxed">
+                Esqueça amadores. Entregamos a **solução definitiva** em conserto de motores, cabos e placas com precisão de engenharia.
             </p>
-            
-            <a href="https://wa.me/5500000000000" class="btn-prime text-xl">
-                <i class="fab fa-whatsapp text-2xl"></i> SOLICITAR TÉCNICO
+            <a href="https://wa.me/5500000000000" class="cyber-button text-xl flex items-center gap-4">
+                <i class="fab fa-whatsapp text-2xl"></i> ACIONAR SUPORTE ELITE
             </a>
         </div>
-    </main>
-
-    <section class="py-24 px-6 relative">
-        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-            
-            <div class="glass-card p-10 rounded-3xl">
-                <div class="w-14 h-14 bg-accent/10 text-accent rounded-2xl flex items-center justify-center mb-8">
-                    <i class="fas fa-microchip text-2xl"></i>
-                </div>
-                <h3 class="text-2xl font-bold mb-4">Placas e Motores</h3>
-                <p class="text-slate-500 leading-relaxed">Reparo e substituição de centrais de comando, motores PPA, Rossi e Peccinin.</p>
-            </div>
-
-            <div class="glass-card p-10 rounded-3xl">
-                <div class="w-14 h-14 bg-accent/10 text-accent rounded-2xl flex items-center justify-center mb-8">
-                    <i class="fas fa-link-slash text-2xl"></i>
-                </div>
-                <h3 class="text-2xl font-bold mb-4">Cabo de Aço</h3>
-                <p class="text-slate-500 leading-relaxed">Troca imediata de cabos rompidos, desfiados ou fora do trilho com garantia.</p>
-            </div>
-
-            <div class="glass-card p-10 rounded-3xl">
-                <div class="w-14 h-14 bg-accent/10 text-accent rounded-2xl flex items-center justify-center mb-8">
-                    <i class="fas fa-key text-2xl"></i>
-                </div>
-                <h3 class="text-2xl font-bold mb-4">Controles</h3>
-                <p class="text-slate-500 leading-relaxed">Configuração e venda de controles novos para portões eletrônicos e cercas.</p>
-            </div>
-
-        </div>
     </section>
 
-    <section class="py-32 px-6">
-        <div class="max-w-6xl mx-auto bg-surface rounded-[40px] p-12 md:p-20 border border-white/5 relative overflow-hidden">
-            <div class="absolute bottom-0 right-0 w-64 h-64 bg-accent/5 rounded-full blur-[80px]"></div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-                <div>
-                    <h2 class="text-4xl md:text-5xl font-extrabold mb-8 leading-tight">Serviço de Elite em <span class="text-accent">Campo Grande.</span></h2>
-                    <ul class="space-y-6">
-                        <li class="flex items-center gap-4 text-lg font-semibold">
-                            <i class="fas fa-check-circle text-accent"></i> Atendimento em até 1 hora
-                        </li>
-                        <li class="flex items-center gap-4 text-lg font-semibold">
-                            <i class="fas fa-check-circle text-accent"></i> Peças originais de fábrica
-                        </li>
-                        <li class="flex items-center gap-4 text-lg font-semibold">
-                            <i class="fas fa-check-circle text-accent"></i> Garantia total do serviço
-                        </li>
-                    </ul>
+    <section class="py-20 px-10">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[600px]">
+                
+                <div class="md:col-span-8 bento-card p-12 flex flex-col justify-end group">
+                    <div class="absolute top-10 right-10 text-electric opacity-20 group-hover:opacity-100 transition-all duration-700">
+                        <i class="fas fa-microchip text-9xl"></i>
+                    </div>
+                    <span class="text-electric font-black uppercase tracking-widest text-xs mb-4">Diagnóstico Preciso</span>
+                    <h2 class="text-4xl md:text-6xl font-black tracking-tighter mb-6">MOTOR, CABO OU <br> PLACA QUEIMADA?</h2>
+                    <p class="text-slate-400 max-w-md text-lg">Não importa o dano. Temos o estoque completo das melhores marcas (PPA, Rossi, Peccinin) para resolver na hora.</p>
                 </div>
-                <div class="bg-bgMain/50 p-8 rounded-3xl border border-white/5">
-                    <p class="text-xl italic text-slate-400 mb-6">"Profissionalismo impecável. O motor do meu portão travou à noite e o técnico resolveu em menos de 40 minutos."</p>
-                    <p class="font-bold text-white">— Cliente em CG</p>
+
+                <div class="md:col-span-4 bento-card p-12 flex flex-col justify-center items-center text-center border-electric/30">
+                    <div class="text-6xl mb-6 text-electric">
+                        <i class="fas fa-bolt-lightning"></i>
+                    </div>
+                    <h3 class="text-3xl font-black mb-4">EM 60 MIN</h3>
+                    <p class="text-slate-500 text-sm">Tempo médio de chegada em qualquer bairro de Campo Grande.</p>
                 </div>
+
+                <div class="md:col-span-4 bento-card p-10 flex flex-col justify-between">
+                    <i class="fas fa-shield-check text-3xl text-electric"></i>
+                    <h4 class="text-xl font-bold mt-4">GARANTIA TOTAL <br> EM NOTA</h4>
+                </div>
+
+                <div class="md:col-span-4 bento-card p-10 flex flex-col justify-between">
+                    <i class="fas fa-screwdriver-wrench text-3xl text-electric"></i>
+                    <h4 class="text-xl font-bold mt-4">FERRAMENTAL <br> DE ÚLTIMA GERAÇÃO</h4>
+                </div>
+
+                <div class="md:col-span-4 bento-card p-10 flex flex-col justify-between bg-electric text-nero">
+                    <i class="fas fa-medal text-3xl"></i>
+                    <h4 class="text-xl font-black mt-4 uppercase">O MELHOR DE <br> MATO GROSSO DO SUL</h4>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <footer class="py-20 px-6 border-t border-white/5">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
+    <div class="line-glow"></div>
+
+    <footer class="py-24 px-10 relative">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20">
             <div>
-                <div class="text-3xl font-extrabold tracking-tighter uppercase mb-4">
-                    PORTÃO<span class="text-accent">PRO</span>
-                </div>
-                <p class="text-slate-500 font-medium">Excelência em manutenção técnica.</p>
+                <div class="font-impact text-5xl mb-8 tracking-tighter">PORTÃO<span class="text-electric">PRO</span></div>
+                <p class="text-slate-500 max-w-xs leading-relaxed">Referência em manutenção de alta performance. Onde a tecnologia encontra a segurança.</p>
             </div>
-
-            <div class="text-center md:text-right">
-                <span class="block text-accent font-bold uppercase text-xs tracking-widest mb-2 text-center md:text-right">Emergências</span>
-                <p class="text-4xl font-extrabold text-white text-center md:text-right">(00) 00000-0000</p>
+            
+            <div class="flex flex-col items-center md:items-end justify-center">
+                <span class="text-[10px] font-black uppercase tracking-[0.5em] text-electric mb-4">Canal de Emergência</span>
+                <a href="https://wa.me/5500000000000" class="text-4xl md:text-6xl font-black tracking-tighter hover:text-electric transition-all duration-300">
+                    (00) 00000-0000
+                </a>
             </div>
         </div>
-        
-        <div class="max-w-6xl mx-auto mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-            <p class="text-[10px] font-bold text-slate-700 uppercase tracking-[0.5em]">© 2026 Portão Pro • Premium Service</p>
-            <div class="flex gap-8 text-slate-500">
-                <i class="fab fa-instagram hover:text-white transition-colors cursor-pointer"></i>
-                <i class="fab fa-facebook hover:text-white transition-colors cursor-pointer"></i>
+
+        <div class="max-w-7xl mx-auto mt-32 flex flex-col md:flex-row justify-between border-t border-white/5 pt-10 gap-8">
+            <p class="text-[10px] font-bold text-slate-700 uppercase tracking-[1em]">© 2026 • Portão Pro Engineering</p>
+            <div class="flex gap-10">
+                <a href="#" class="text-slate-600 hover:text-electric transition-colors"><i class="fab fa-instagram text-xl"></i></a>
+                <a href="#" class="text-slate-600 hover:text-electric transition-colors"><i class="fab fa-facebook-f text-xl"></i></a>
             </div>
         </div>
     </footer>
