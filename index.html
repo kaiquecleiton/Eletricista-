@@ -3,28 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portão Pro MS | Especialista em Automação</title>
+    <title>Portão Pro | Soluções de Elite</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Syncopate:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                        title: ['Syncopate', 'sans-serif'],
-                    },
+                    fontFamily: { sans: ['Outfit', 'sans-serif'] },
                     colors: {
-                        dark: '#05070A',
-                        card: '#0F131A',
-                        accent: '#FBBF24', // Amarelo Ouro/Âmbar
-                        primary: '#1E40AF'
+                        bgMain: '#0A0C10',
+                        accent: '#3B82F6', // Azul Elétrico
+                        surface: '#161B22'
                     }
                 }
             }
@@ -32,39 +28,42 @@
     </script>
 
     <style>
-        body { background-color: #05070A; color: #E2E8F0; }
-
-        /* Efeito de Vidro Escuro */
-        .glass {
-            background: rgba(15, 19, 26, 0.8);
+        body { background-color: #0A0C10; color: #F0F6FC; }
+        
+        /* Efeito de Vidro (Glassmorphism) */
+        .glass-card {
+            background: rgba(22, 27, 34, 0.6);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            border-color: #3B82F6;
+            background: rgba(59, 130, 246, 0.05);
+            transform: translateY(-8px);
         }
 
-        /* Botão WhatsApp Emergência */
-        .btn-emergency {
-            background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%);
-            box-shadow: 0 10px 30px -10px rgba(34, 197, 94, 0.5);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        .btn-emergency:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 20px 40px -10px rgba(34, 197, 94, 0.6);
-        }
-
-        /* Card com Glow sutil */
-        .glow-card {
-            background: #0F131A;
-            border: 1px solid rgba(255, 255, 255, 0.03);
+        /* Botão Magnético */
+        .btn-prime {
+            background: #3B82F6;
+            color: white;
+            padding: 20px 40px;
+            border-radius: 14px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
             transition: all 0.3s ease;
         }
-        .glow-card:hover {
-            border-color: rgba(251, 191, 36, 0.3);
-            background: #161B25;
+        .btn-prime:hover {
+            box-shadow: 0 0 50px rgba(59, 130, 246, 0.5);
+            transform: scale(1.02);
         }
 
-        .text-gradient {
-            background: linear-gradient(to right, #FFFFFF, #94A3B8);
+        /* Texto com Gradiente Moderno */
+        .gradient-text {
+            background: linear-gradient(135deg, #FFFFFF 0%, #3B82F6 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -72,108 +71,116 @@
 </head>
 <body class="antialiased">
 
-    <nav class="fixed top-0 w-full z-50 glass border-b border-white/5 px-6 py-5">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <div class="font-title text-xl tracking-tighter text-white">
+    <nav class="fixed top-0 w-full z-50 px-6 py-6 border-b border-white/5 bg-bgMain/80 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <div class="text-2xl font-extrabold tracking-tighter uppercase">
                 PORTÃO<span class="text-accent italic">PRO</span>
             </div>
-            <div class="flex items-center gap-4">
-                <div class="hidden sm:flex items-center gap-2 bg-white/5 px-4 py-2 rounded-full border border-white/10">
-                    <span class="w-2 h-2 bg-accent rounded-full animate-pulse"></span>
-                    <span class="text-[10px] font-bold uppercase tracking-widest text-slate-300">Campo Grande - MS</span>
-                </div>
+            <div class="bg-white/5 px-4 py-1.5 rounded-full border border-white/10 flex items-center gap-2">
+                <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                <span class="text-[10px] font-bold uppercase tracking-widest opacity-70">Disponível em CG</span>
             </div>
         </div>
     </nav>
 
-    <section class="relative pt-44 pb-32 px-6 overflow-hidden">
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent -z-10"></div>
+    <main class="relative pt-48 pb-32 px-6 overflow-hidden">
+        <div class="absolute -top-24 -left-24 w-96 h-96 bg-accent/20 rounded-full blur-[120px]"></div>
+        <div class="absolute top-1/2 -right-24 w-64 h-64 bg-accent/10 rounded-full blur-[100px]"></div>
 
-        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-            <div class="lg:col-span-7">
-                <h1 class="font-title text-4xl md:text-7xl leading-tight mb-8 text-gradient">
-                    O PORTÃO <br> 
-                    <span class="text-accent uppercase">TRAVOU?</span>
-                </h1>
-                <p class="text-lg md:text-xl text-slate-400 mb-12 max-w-xl leading-relaxed">
-                    Não perca tempo tentando resolver sozinho. Sou especialista em consertos rápidos em <strong>Campo Grande</strong>. Atendimento técnico de elite na sua porta ainda hoje.
-                </p>
-                
-                <div class="flex flex-col sm:flex-row gap-6">
-                    <a href="https://wa.me/5567981194737" class="btn-emergency px-10 py-6 rounded-2xl font-extrabold text-lg flex items-center justify-center gap-4 text-white">
-                        <i class="fab fa-whatsapp text-2xl"></i>
-                        ME CHAME AGORA
-                    </a>
+        <div class="max-w-6xl mx-auto text-center">
+            <h1 class="text-5xl md:text-8xl font-extrabold mb-8 tracking-tighter leading-none">
+                <span class="gradient-text">O PORTÃO TRAVOU?</span> <br>
+                <span class="text-white">NÓS RESOLVEMOS.</span>
+            </h1>
+            
+            <p class="text-lg md:text-xl text-slate-400 mb-12 max-w-2xl mx-auto leading-relaxed">
+                Manutenção especializada e conserto imediato de motores, cabos e placas em toda <strong>Campo Grande</strong>. Tecnologia e rapidez no atendimento.
+            </p>
+            
+            <a href="https://wa.me/5500000000000" class="btn-prime text-xl">
+                <i class="fab fa-whatsapp text-2xl"></i> SOLICITAR TÉCNICO
+            </a>
+        </div>
+    </main>
+
+    <section class="py-24 px-6 relative">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <div class="glass-card p-10 rounded-3xl">
+                <div class="w-14 h-14 bg-accent/10 text-accent rounded-2xl flex items-center justify-center mb-8">
+                    <i class="fas fa-microchip text-2xl"></i>
                 </div>
+                <h3 class="text-2xl font-bold mb-4">Placas e Motores</h3>
+                <p class="text-slate-500 leading-relaxed">Reparo e substituição de centrais de comando, motores PPA, Rossi e Peccinin.</p>
             </div>
 
-            <div class="lg:col-span-5">
-                <div class="glow-card p-8 rounded-[32px] relative">
-                    <div class="absolute -top-4 -left-4 bg-accent text-dark px-4 py-1 rounded-lg font-black text-xs uppercase tracking-tighter">Urgente</div>
-                    <h3 class="text-xl font-extrabold mb-6 text-white">Qual o problema agora?</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/5">
-                            <i class="fas fa-bolt-lightning text-accent"></i>
-                            <span class="font-semibold text-sm">O motor parou de responder</span>
-                        </div>
-                        <div class="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/5">
-                            <i class="fas fa-link-slash text-accent"></i>
-                            <span class="font-semibold text-sm">O cabo de aço estourou</span>
-                        </div>
-                        <div class="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/5">
-                            <i class="fas fa-arrows-to-dot text-accent"></i>
-                            <span class="font-semibold text-sm">O portão está fora do trilho</span>
-                        </div>
-                    </div>
+            <div class="glass-card p-10 rounded-3xl">
+                <div class="w-14 h-14 bg-accent/10 text-accent rounded-2xl flex items-center justify-center mb-8">
+                    <i class="fas fa-link-slash text-2xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">Cabo de Aço</h3>
+                <p class="text-slate-500 leading-relaxed">Troca imediata de cabos rompidos, desfiados ou fora do trilho com garantia.</p>
+            </div>
+
+            <div class="glass-card p-10 rounded-3xl">
+                <div class="w-14 h-14 bg-accent/10 text-accent rounded-2xl flex items-center justify-center mb-8">
+                    <i class="fas fa-key text-2xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">Controles</h3>
+                <p class="text-slate-500 leading-relaxed">Configuração e venda de controles novos para portões eletrônicos e cercas.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="py-32 px-6">
+        <div class="max-w-6xl mx-auto bg-surface rounded-[40px] p-12 md:p-20 border border-white/5 relative overflow-hidden">
+            <div class="absolute bottom-0 right-0 w-64 h-64 bg-accent/5 rounded-full blur-[80px]"></div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-extrabold mb-8 leading-tight">Serviço de Elite em <span class="text-accent">Campo Grande.</span></h2>
+                    <ul class="space-y-6">
+                        <li class="flex items-center gap-4 text-lg font-semibold">
+                            <i class="fas fa-check-circle text-accent"></i> Atendimento em até 1 hora
+                        </li>
+                        <li class="flex items-center gap-4 text-lg font-semibold">
+                            <i class="fas fa-check-circle text-accent"></i> Peças originais de fábrica
+                        </li>
+                        <li class="flex items-center gap-4 text-lg font-semibold">
+                            <i class="fas fa-check-circle text-accent"></i> Garantia total do serviço
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-bgMain/50 p-8 rounded-3xl border border-white/5">
+                    <p class="text-xl italic text-slate-400 mb-6">"Profissionalismo impecável. O motor do meu portão travou à noite e o técnico resolveu em menos de 40 minutos."</p>
+                    <p class="font-bold text-white">— Cliente em CG</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-24 px-6 bg-[#080A0F]">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="p-10 glow-card rounded-3xl">
-                <div class="w-12 h-12 bg-accent/10 text-accent rounded-xl flex items-center justify-center mb-6">
-                    <i class="fas fa-clock"></i>
+    <footer class="py-20 px-6 border-t border-white/5">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
+            <div>
+                <div class="text-3xl font-extrabold tracking-tighter uppercase mb-4">
+                    PORTÃO<span class="text-accent">PRO</span>
                 </div>
-                <h4 class="text-xl font-black mb-4 uppercase text-white">Rapidez</h4>
-                <p class="text-slate-500 text-sm leading-relaxed font-medium">Equipe em prontidão em CG. Atendemos todos os bairros com foco em agilidade total.</p>
+                <p class="text-slate-500 font-medium">Excelência em manutenção técnica.</p>
             </div>
 
-            <div class="p-10 glow-card rounded-3xl">
-                <div class="w-12 h-12 bg-accent/10 text-accent rounded-xl flex items-center justify-center mb-6">
-                    <i class="fas fa-shield-check"></i>
-                </div>
-                <h4 class="text-xl font-black mb-4 uppercase text-white">Garantia</h4>
-                <p class="text-slate-500 text-sm leading-relaxed font-medium">Trabalhamos apenas com peças originais PPA, Rossi e Peccinin. Serviço com nota e garantia.</p>
-            </div>
-
-            <div class="p-10 glow-card rounded-3xl">
-                <div class="w-12 h-12 bg-accent/10 text-accent rounded-xl flex items-center justify-center mb-6">
-                    <i class="fas fa-handshake-angle"></i>
-                </div>
-                <h4 class="text-xl font-black mb-4 uppercase text-white">Confiança</h4>
-                <p class="text-slate-500 text-sm leading-relaxed font-medium">Orçamento honesto e transparente. Você só paga o valor justo pelo conserto necessário.</p>
+            <div class="text-center md:text-right">
+                <span class="block text-accent font-bold uppercase text-xs tracking-widest mb-2 text-center md:text-right">Emergências</span>
+                <p class="text-4xl font-extrabold text-white text-center md:text-right">(00) 00000-0000</p>
             </div>
         </div>
-    </section>
-
-    <footer class="py-12 px-6 border-t border-white/5">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
-            <div class="flex flex-col items-center md:items-start gap-2">
-                <div class="font-title text-lg tracking-tighter text-white">
-                    PORTÃO<span class="text-accent italic">PRO</span>
-                </div>
-                <p class="text-[10px] font-black uppercase tracking-[0.4em] text-slate-600">Campo Grande • MS</p>
+        
+        <div class="max-w-6xl mx-auto mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+            <p class="text-[10px] font-bold text-slate-700 uppercase tracking-[0.5em]">© 2026 Portão Pro • Premium Service</p>
+            <div class="flex gap-8 text-slate-500">
+                <i class="fab fa-instagram hover:text-white transition-colors cursor-pointer"></i>
+                <i class="fab fa-facebook hover:text-white transition-colors cursor-pointer"></i>
             </div>
-
-            <div class="flex flex-col items-center md:items-end">
-                <span class="text-accent font-black text-xs uppercase tracking-widest mb-1">WhatsApp Plantão</span>
-                <p class="text-2xl font-extrabold text-white tracking-tight">(67) 98119-4737</p>
-            </div>
-        </div>
-        <div class="text-center mt-12">
-            <p class="text-[9px] font-bold text-slate-800 uppercase tracking-[0.8em]">© 2026 Portão Pro • Performance Industrial</p>
         </div>
     </footer>
 
