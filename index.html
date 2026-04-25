@@ -1,217 +1,196 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <title>Conserto de Portão Eletrônico em Campo Grande MS | Atendimento Rápido</title>
+    <title>Conserto de Portão Eletrônico em Campo Grande MS | Assistência 24h</title>
+    <meta name="description" content="Precisa de conserto de portão eletrônico em Campo Grande? Manutenção rápida, instalação de motores e automatização. Atendimento imediato via WhatsApp!">
+    <meta name="keywords" content="conserto de portao campo grande ms, motor de portao campo grande, arrumar portao eletronico cg ms, instalacao de portao campo grande">
+    
+    <meta property="og:title" content="Portão Eletrônico travou? Resolvo Agora em Campo Grande">
+    <meta property="og:description" content="Manutenção e instalação rápida com preço justo. Chame no WhatsApp.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="portao.jpg">
 
-  <meta name="description" content="Conserto e instalação de portão eletrônico em Campo Grande MS. Atendimento rápido, manutenção e automatização com orçamento pelo WhatsApp.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+        
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #020617; color: #f8fafc; }
 
-  <meta property="og:title" content="Portão Eletrônico em Campo Grande MS">
-  <meta property="og:description" content="Conserto rápido e instalação de portões eletrônicos. Fale agora no WhatsApp.">
-  <meta property="og:image" content="portao.jpg">
+        .glass-header { 
+            background: rgba(15, 23, 42, 0.8); 
+            backdrop-filter: blur(12px); 
+            border-bottom: 1px solid rgba(59, 130, 246, 0.2); 
+        }
+        
+        .btn-blue {
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
+            transition: all 0.3s ease;
+        }
+        .btn-blue:hover { transform: translateY(-2px); box-shadow: 0 0 30px rgba(37, 99, 235, 0.6); }
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+        .card-service {
+            background: rgba(30, 41, 59, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-blur: blur(10px);
+        }
 
-  <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
+        .antes-depois-label {
+            background: #2563eb;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
 
-    :root {
-      --primary:#111827;
-      --secondary:#1F2937;
-      --cta:#22C55E;
-      --bg:#F9FAFB;
-      --text:#111;
-    }
-
-    body {
-      font-family:'Poppins',sans-serif;
-      background:var(--bg);
-      color:var(--text);
-    }
-
-    section {
-      padding:40px 20px;
-      text-align:center;
-    }
-
-    .hero {
-      background: linear-gradient(180deg,#111827 0%,#1F2937 100%);
-      color:#fff;
-    }
-
-    .hero h1 {
-      font-size:26px;
-      line-height:1.25;
-      letter-spacing:-0.5px;
-      margin-bottom:10px;
-      padding:0 10px;
-    }
-
-    .hero p {
-      font-size:14px;
-      color:#d1d5db;
-      margin:10px 0 15px;
-    }
-
-    .botao {
-      display:block;
-      width:260px;
-      margin:10px auto 0;
-      background:var(--cta);
-      color:#fff;
-      padding:14px 0;
-      border-radius:8px;
-      text-decoration:none;
-      font-weight:700;
-    }
-
-    .badge {
-      font-size:12px;
-      background:#000;
-      display:inline-block;
-      padding:6px 12px;
-      border-radius:20px;
-      margin:10px auto 15px;
-    }
-
-    .slider-novo {
-      width:260px;
-      margin:20px auto;
-    }
-
-    .slider-novo img {
-      width:100%;
-      border-radius:10px;
-    }
-
-    h2 {
-      font-size:20px;
-      margin-bottom:10px;
-      color:var(--primary);
-    }
-
-    .card {
-      background:#fff;
-      padding:18px;
-      border-radius:10px;
-      max-width:360px;
-      margin:0 auto;
-      line-height:1.6;
-      box-shadow:0 5px 15px rgba(0,0,0,0.05);
-    }
-
-    /* RESULTADOS */
-    .resultados {
-      overflow:hidden;
-    }
-
-    .slider {
-      display:flex;
-      overflow-x:auto;
-      gap:20px;
-      padding:10px;
-      scroll-snap-type:x mandatory;
-    }
-
-    .par {
-      display:flex;
-      min-width:100%;
-      gap:10px;
-      scroll-snap-align:start;
-    }
-
-    .par img {
-      width:50%;
-      border-radius:10px;
-    }
-
-    /* WHATSAPP FIXO */
-    .whatsapp {
-      position:fixed;
-      bottom:18px;
-      right:18px;
-      width:60px;
-      height:60px;
-      background:#22C55E;
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      z-index:99999;
-      box-shadow:0 10px 25px rgba(0,0,0,0.3);
-    }
-
-    .whatsapp img {
-      width:30px;
-    }
-
-  </style>
+        .scroll-hidden::-webkit-scrollbar { display: none; }
+    </style>
 </head>
+<body class="antialiased">
 
-<body>
+    <header class="fixed w-full z-50 glass-header py-4 px-6 flex justify-between items-center">
+        <div class="flex items-center gap-2">
+            <i class="fas fa-shield-halved text-blue-500 text-xl"></i>
+            <span class="text-xl font-extrabold tracking-tighter uppercase">PORTÃO<span class="text-blue-500">PRO</span></span>
+        </div>
+        <a href="https://wa.me/5567981194737" class="btn-blue text-white px-5 py-2 rounded-xl font-bold text-[10px] uppercase tracking-widest">
+            CHAMAR TÉCNICO
+        </a>
+    </header>
 
-<section class="hero">
+    <section class="relative pt-32 pb-16 px-6 overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-blue-600/20 blur-[120px]"></div>
+        
+        <div class="max-w-7xl mx-auto text-center">
+            <span class="inline-block bg-blue-500/10 text-blue-400 text-[10px] font-bold px-4 py-2 rounded-full uppercase tracking-widest mb-6" data-aos="fade-down">
+                <i class="fas fa-map-marker-alt mr-2"></i> Campo Grande - MS
+            </span>
+            
+            <h1 class="text-[38px] md:text-7xl font-extrabold leading-[1.1] mb-6 tracking-tight" data-aos="fade-up">
+                Seu Portão <br><span class="text-blue-500 italic">Inteligente e Rápido.</span>
+            </h1>
+            
+            <p class="text-slate-400 text-base md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+                Instalação de motores de alta velocidade e assistência técnica especializada. Segurança para sua família e agilidade para o seu dia.
+            </p>
 
-  <h1>
-  Portão travou ou parou?<br>
-  Resolvo rápido<br>
-  pra você
-  </h1>
+            <div class="relative max-w-3xl mx-auto mb-12" data-aos="zoom-in">
+                <div class="absolute inset-0 bg-blue-500/20 blur-3xl -z-10"></div>
+                <img src="portao1.jpg" alt="Motor de Portão Eletrônico" class="rounded-[2.5rem] border-2 border-white/10 shadow-2xl w-full h-[250px] md:h-[400px] object-cover">
+                <div class="absolute -bottom-6 left-1/2 -translate-x-1/2 w-full px-6">
+                    <a href="https://wa.me/5567981194737" class="btn-blue text-white py-5 px-10 rounded-2xl font-black text-lg block w-full shadow-2xl uppercase tracking-widest">
+                        ORÇAMENTO EXPRESSO
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <div class="badge">Atendimento em Campo Grande MS</div>
+    <section class="py-20 px-6 bg-slate-950/50">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-center text-3xl font-extrabold mb-12">Soluções <span class="text-blue-500">Específicas</span></h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="card-service p-8 rounded-3xl" data-aos="fade-up">
+                    <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-tools text-blue-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Conserto Geral</h3>
+                    <p class="text-slate-400 text-sm">Troca de cabos, roldanas, fim de curso e ajustes mecânicos urgentes.</p>
+                </div>
+                
+                <div class="card-service p-8 rounded-3xl" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-bolt text-blue-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Motores Rápidos</h3>
+                    <p class="text-slate-400 text-sm">Instalação de motores que abrem em até 4 segundos para sua segurança.</p>
+                </div>
 
-  <div class="slider-novo">
-    <img src="portao1.jpg" alt="Portão eletrônico em Campo Grande">
-  </div>
+                <div class="card-service p-8 rounded-3xl" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-mobile-screen text-blue-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Automatização</h3>
+                    <p class="text-slate-400 text-sm">Configure seu portão para abrir pelo celular ou controle remoto de longo alcance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <p>
-    Conserto e instalação de portão eletrônico com atendimento ágil
-  </p>
+    <section class="py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex justify-between items-end mb-10 text-left">
+                <div>
+                    <h2 class="text-3xl font-black italic">CONFIANÇA E <br><span class="text-blue-500">RESULTADO</span></h2>
+                </div>
+                <div class="hidden md:block text-right">
+                    <p class="text-slate-500 text-xs uppercase tracking-widest">Excelência em Campo Grande</p>
+                </div>
+            </div>
 
-  <a href="https://wa.me/5567981194737?text=Olá,%20sou%20de%20Campo%20Grande%20e%20preciso%20de%20conserto%20de%20portão" class="botao">
-    Falar no WhatsApp
-  </a>
+            <div class="flex overflow-x-auto gap-4 pb-10 scroll-hidden snap-x snap-mandatory">
+                <div class="min-w-[85%] md:min-w-[45%] snap-center">
+                    <div class="grid grid-cols-2 gap-2">
+                        <div class="relative">
+                            <img src="antes1.jpg" class="h-60 w-full object-cover rounded-2xl border border-white/5 opacity-60">
+                            <span class="antes-depois-label absolute top-2 left-2">Antigo</span>
+                        </div>
+                        <div class="relative">
+                            <img src="depois1.jpg" class="h-60 w-full object-cover rounded-2xl border border-blue-500/30 shadow-[0_0_15px_rgba(37,99,235,0.2)]">
+                            <span class="antes-depois-label absolute top-2 left-2">Novo</span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-4 px-2">Substituição de motor lento por sistema de alta velocidade.</p>
+                </div>
 
-</section>
+                <div class="min-w-[85%] md:min-w-[45%] snap-center">
+                    <div class="grid grid-cols-2 gap-2">
+                        <div class="relative">
+                            <img src="antes2.jpg" class="h-60 w-full object-cover rounded-2xl border border-white/5 opacity-60">
+                            <span class="antes-depois-label absolute top-2 left-2">Defeito</span>
+                        </div>
+                        <div class="relative">
+                            <img src="depois2.jpg" class="h-60 w-full object-cover rounded-2xl border border-blue-500/30 shadow-[0_0_15px_rgba(37,99,235,0.2)]">
+                            <span class="antes-depois-label absolute top-2 left-2">Reparo</span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-4 px-2">Reparo em placa central e troca de capacitores queimados.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section>
-  <h2>Serviços</h2>
+    <footer class="py-16 bg-slate-950 px-6 border-t border-white/5 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h3 class="text-xl font-bold mb-6">Atendimento Rápido em Campo Grande - MS</h3>
+            <p class="text-slate-400 text-sm mb-8 leading-relaxed">
+                Especialista em manutenção preventiva e corretiva de portões eletrônicos de todas as marcas (PPA, Rossi, Peccinin, Garen). Atendemos todos os bairros de Campo Grande.
+            </p>
+            <div class="flex justify-center gap-6 mb-10">
+                <a href="https://wa.me/5567981194737" class="text-blue-500 hover:text-white transition-colors text-2xl">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+            <p class="text-[10px] text-slate-600 uppercase tracking-widest">© 2026 Portão Pro CG - Todos os Direitos Reservados</p>
+        </div>
+    </footer>
 
-  <div class="card">
-    Conserto de portão • Instalação de motor • Automatização •
-    Troca de controle • Manutenção • Ajustes e regulagem
-  </div>
-</section>
+    <a href="https://wa.me/5567981194737" class="fixed bottom-6 right-6 bg-[#22C55E] w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-[0_10px_25px_rgba(34,197,94,0.4)] z-50 animate-bounce">
+        <i class="fab fa-whatsapp text-white"></i>
+    </a>
 
-<section>
-  <h2>Antes e Depois</h2>
-
-  <div class="resultados">
-    <div class="slider">
-
-      <div class="par">
-        <img src="antes1.jpg" alt="Portão com defeito">
-        <img src="depois1.jpg" alt="Portão funcionando">
-      </div>
-
-      <div class="par">
-        <img src="antes2.jpg" alt="Motor antigo">
-        <img src="depois2.jpg" alt="Motor novo instalado">
-      </div>
-
-    </div>
-  </div>
-
-  <p style="font-size:13px; color:#666; max-width:500px; margin:10px auto;">
-    Atendimento rápido em Campo Grande MS com serviço profissional e garantia.
-  </p>
-</section>
-
-<a href="https://wa.me/5567981194737?text=Olá,%20sou%20de%20Campo%20Grande%20e%20preciso%20de%20conserto%20de%20portão" class="whatsapp">
-  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
-</a>
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
 </body>
 </html>
