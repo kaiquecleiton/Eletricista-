@@ -1,28 +1,30 @@
 <!DOCTYPE html>
-<html lang="pt-br" class="scroll-smooth">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portão Pro | Conserto Rápido em Campo Grande</title>
+    <title>Portão Pro MS | Especialista em Automação</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Syncopate:wght@700&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: { sans: ['Poppins', 'sans-serif'], },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        title: ['Syncopate', 'sans-serif'],
+                    },
                     colors: {
-                        brand: {
-                            blue: '#0052FF', // Azul vibrante e moderno
-                            dark: '#0A0E17', // Quase preto para textos e rodapé
-                            gray: '#F3F4F6', // Cinza fundo
-                        }
+                        dark: '#05070A',
+                        card: '#0F131A',
+                        accent: '#FBBF24', // Amarelo Ouro/Âmbar
+                        primary: '#1E40AF'
                     }
                 }
             }
@@ -30,201 +32,148 @@
     </script>
 
     <style>
-        body { background-color: #FAFAFA; color: #111827; }
-        
-        /* Botão WhatsApp - O mais importante do site */
-        .btn-zap {
-            background-color: #25D366;
-            color: white;
-            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
-            transition: all 0.3s ease;
-        }
-        .btn-zap:hover {
-            background-color: #1FAF53;
-            transform: translateY(-3px);
-            box-shadow: 0 12px 32px rgba(37, 211, 102, 0.4);
+        body { background-color: #05070A; color: #E2E8F0; }
+
+        /* Efeito de Vidro Escuro */
+        .glass {
+            background: rgba(15, 19, 26, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        /* Cards flutuantes com muito respiro */
-        .card-clean {
-            background: white;
-            border-radius: 20px;
-            padding: 32px;
-            border: 1px solid #E5E7EB;
-            transition: all 0.3s ease;
+        /* Botão WhatsApp Emergência */
+        .btn-emergency {
+            background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%);
+            box-shadow: 0 10px 30px -10px rgba(34, 197, 94, 0.5);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-        .card-clean:hover {
-            border-color: #0052FF;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
-            transform: translateY(-5px);
+        .btn-emergency:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 20px 40px -10px rgba(34, 197, 94, 0.6);
         }
 
-        /* Badge de Status animado */
-        .pulse-dot {
-            animation: pulse 2s infinite;
+        /* Card com Glow sutil */
+        .glow-card {
+            background: #0F131A;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            transition: all 0.3s ease;
         }
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
-            70% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        .glow-card:hover {
+            border-color: rgba(251, 191, 36, 0.3);
+            background: #161B25;
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #FFFFFF, #94A3B8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
     </style>
 </head>
-<body class="antialiased selection:bg-brand-blue selection:text-white">
+<body class="antialiased">
 
-    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md border-b border-gray-100 z-50 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
-            <div class="flex items-center gap-2">
-                <div class="w-10 h-10 bg-brand-blue text-white rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/30">
-                    <i class="fas fa-shield-halved text-lg"></i>
-                </div>
-                <span class="font-bold text-2xl tracking-tight text-brand-dark">PORTÃO<span class="text-brand-blue">PRO</span></span>
+    <nav class="fixed top-0 w-full z-50 glass border-b border-white/5 px-6 py-5">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="font-title text-xl tracking-tighter text-white">
+                PORTÃO<span class="text-accent italic">PRO</span>
             </div>
-            
-            <div class="hidden md:flex items-center gap-6">
-                <div class="flex items-center gap-2 bg-green-50 px-4 py-2 rounded-full border border-green-100">
-                    <div class="w-2.5 h-2.5 bg-green-500 rounded-full pulse-dot"></div>
-                    <span class="text-xs font-bold text-green-700 uppercase tracking-wide">Plantão Ativo - CG</span>
+            <div class="flex items-center gap-4">
+                <div class="hidden sm:flex items-center gap-2 bg-white/5 px-4 py-2 rounded-full border border-white/10">
+                    <span class="w-2 h-2 bg-accent rounded-full animate-pulse"></span>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-slate-300">Campo Grande - MS</span>
                 </div>
             </div>
         </div>
     </nav>
 
-    <header class="pt-40 pb-20 md:pt-48 md:pb-32 px-6">
-        <div class="max-w-7xl mx-auto flex flex-col items-center text-center">
-            
-            <h1 class="text-5xl md:text-7xl font-extrabold text-brand-dark tracking-tight mb-8 leading-[1.1] max-w-4xl">
-                Seu portão quebrou? <br>
-                <span class="text-brand-blue">A gente resolve hoje.</span>
-            </h1>
-            
-            <p class="text-lg md:text-xl text-gray-500 mb-12 max-w-2xl leading-relaxed">
-                Manutenção rápida, troca de cabos, motores e placas em toda <strong>Campo Grande - MS</strong>. Não durma com o portão aberto, chame o técnico agora.
-            </p>
-            
-            <div class="flex flex-col sm:flex-row items-center gap-6 w-full sm:w-auto">
-                <a href="https://wa.me/5567981194737" class="btn-zap w-full sm:w-auto px-10 py-5 rounded-2xl font-bold text-lg flex items-center justify-center gap-3">
-                    <i class="fab fa-whatsapp text-2xl"></i>
-                    ME CHAME NO WHATSAPP
-                </a>
-            </div>
-            
-        </div>
-    </header>
+    <section class="relative pt-44 pb-32 px-6 overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent -z-10"></div>
 
-    <section class="py-24 bg-white px-6">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-extrabold text-brand-dark mb-4">O que aconteceu com seu portão?</h2>
-                <p class="text-gray-500">Seja qual for o problema, nós temos a peça e a solução.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="card-clean">
-                    <div class="w-12 h-12 bg-blue-50 text-brand-blue rounded-xl flex items-center justify-center mb-6 text-xl">
-                        <i class="fas fa-plug-circle-xmark"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-brand-dark mb-2">Motor parou</h3>
-                    <p class="text-gray-500 text-sm">Não dá sinal de vida ou só faz um barulho estranho e não move.</p>
-                </div>
-
-                <div class="card-clean">
-                    <div class="w-12 h-12 bg-blue-50 text-brand-blue rounded-xl flex items-center justify-center mb-6 text-xl">
-                        <i class="fas fa-link-slash"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-brand-dark mb-2">Cabo estourou</h3>
-                    <p class="text-gray-500 text-sm">O cabo de aço arrebentou, desfiou ou o portão caiu do trilho.</p>
-                </div>
-
-                <div class="card-clean">
-                    <div class="w-12 h-12 bg-blue-50 text-brand-blue rounded-xl flex items-center justify-center mb-6 text-xl">
-                        <i class="fas fa-gamepad"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-brand-dark mb-2">Controle falhando</h3>
-                    <p class="text-gray-500 text-sm">Precisa de controles novos ou reconfigurar a placa de comando.</p>
-                </div>
-
-                <div class="card-clean">
-                    <div class="w-12 h-12 bg-blue-50 text-brand-blue rounded-xl flex items-center justify-center mb-6 text-xl">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-brand-dark mb-2">Manutenção Geral</h3>
-                    <p class="text-gray-500 text-sm">Troca de roldanas, fim de curso, sensores e lubrificação.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-24 bg-brand-gray px-6">
-        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-center">
-            
-            <div class="lg:w-1/2">
-                <h2 class="text-3xl md:text-4xl font-extrabold text-brand-dark mb-6">Trabalho honesto, rápido e com garantia.</h2>
-                <p class="text-lg text-gray-500 mb-8 leading-relaxed">
-                    Sabemos que ficar com o portão quebrado é questão de segurança. Por isso, nosso compromisso é com a agilidade e a transparência em Campo Grande.
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            <div class="lg:col-span-7">
+                <h1 class="font-title text-4xl md:text-7xl leading-tight mb-8 text-gradient">
+                    O PORTÃO <br> 
+                    <span class="text-accent uppercase">TRAVOU?</span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-400 mb-12 max-w-xl leading-relaxed">
+                    Não perca tempo tentando resolver sozinho. Sou especialista em consertos rápidos em <strong>Campo Grande</strong>. Atendimento técnico de elite na sua porta ainda hoje.
                 </p>
                 
-                <ul class="space-y-6">
-                    <li class="flex items-center gap-4">
-                        <div class="w-8 h-8 rounded-full bg-green-100 text-green-600 flex items-center justify-center shrink-0">
-                            <i class="fas fa-check text-sm"></i>
-                        </div>
-                        <span class="font-semibold text-brand-dark">Chegada rápida em todos os bairros da capital.</span>
-                    </li>
-                    <li class="flex items-center gap-4">
-                        <div class="w-8 h-8 rounded-full bg-green-100 text-green-600 flex items-center justify-center shrink-0">
-                            <i class="fas fa-check text-sm"></i>
-                        </div>
-                        <span class="font-semibold text-brand-dark">Orçamento claro: você sabe o preço antes de fazermos.</span>
-                    </li>
-                    <li class="flex items-center gap-4">
-                        <div class="w-8 h-8 rounded-full bg-green-100 text-green-600 flex items-center justify-center shrink-0">
-                            <i class="fas fa-check text-sm"></i>
-                        </div>
-                        <span class="font-semibold text-brand-dark">Peças 100% originais de marcas como PPA e Rossi.</span>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="lg:w-1/2 w-full">
-                <div class="bg-brand-dark rounded-3xl p-10 text-center shadow-2xl relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-40 h-40 bg-brand-blue rounded-full blur-3xl opacity-20 transform translate-x-10 -translate-y-10"></div>
-                    
-                    <h3 class="text-2xl font-bold text-white mb-4">Precisa de ajuda agora?</h3>
-                    <p class="text-gray-400 mb-8">Clique no botão abaixo, me mande um áudio ou foto do seu portão e eu te respondo na hora.</p>
-                    
-                    <a href="https://wa.me/5567981194737" class="btn-zap w-full py-4 rounded-xl font-bold text-lg inline-flex items-center justify-center gap-2">
-                        <i class="fab fa-whatsapp text-xl"></i> (67) 98119-4737
+                <div class="flex flex-col sm:flex-row gap-6">
+                    <a href="https://wa.me/5567981194737" class="btn-emergency px-10 py-6 rounded-2xl font-extrabold text-lg flex items-center justify-center gap-4 text-white">
+                        <i class="fab fa-whatsapp text-2xl"></i>
+                        ME CHAME AGORA
                     </a>
                 </div>
             </div>
 
+            <div class="lg:col-span-5">
+                <div class="glow-card p-8 rounded-[32px] relative">
+                    <div class="absolute -top-4 -left-4 bg-accent text-dark px-4 py-1 rounded-lg font-black text-xs uppercase tracking-tighter">Urgente</div>
+                    <h3 class="text-xl font-extrabold mb-6 text-white">Qual o problema agora?</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/5">
+                            <i class="fas fa-bolt-lightning text-accent"></i>
+                            <span class="font-semibold text-sm">O motor parou de responder</span>
+                        </div>
+                        <div class="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/5">
+                            <i class="fas fa-link-slash text-accent"></i>
+                            <span class="font-semibold text-sm">O cabo de aço estourou</span>
+                        </div>
+                        <div class="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/5">
+                            <i class="fas fa-arrows-to-dot text-accent"></i>
+                            <span class="font-semibold text-sm">O portão está fora do trilho</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <footer class="bg-white border-t border-gray-200 pt-16 pb-8 px-6">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-            
-            <div class="flex items-center gap-2">
-                <div class="w-8 h-8 bg-brand-blue text-white rounded-lg flex items-center justify-center">
-                    <i class="fas fa-shield-halved text-sm"></i>
+    <section class="py-24 px-6 bg-[#080A0F]">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="p-10 glow-card rounded-3xl">
+                <div class="w-12 h-12 bg-accent/10 text-accent rounded-xl flex items-center justify-center mb-6">
+                    <i class="fas fa-clock"></i>
                 </div>
-                <span class="font-bold text-xl tracking-tight text-brand-dark">PORTÃO<span class="text-brand-blue">PRO</span></span>
+                <h4 class="text-xl font-black mb-4 uppercase text-white">Rapidez</h4>
+                <p class="text-slate-500 text-sm leading-relaxed font-medium">Equipe em prontidão em CG. Atendemos todos os bairros com foco em agilidade total.</p>
             </div>
 
-            <div class="text-gray-500 font-medium text-sm flex items-center gap-2">
-                <i class="fas fa-location-dot"></i> Atendimento em Campo Grande - MS
+            <div class="p-10 glow-card rounded-3xl">
+                <div class="w-12 h-12 bg-accent/10 text-accent rounded-xl flex items-center justify-center mb-6">
+                    <i class="fas fa-shield-check"></i>
+                </div>
+                <h4 class="text-xl font-black mb-4 uppercase text-white">Garantia</h4>
+                <p class="text-slate-500 text-sm leading-relaxed font-medium">Trabalhamos apenas com peças originais PPA, Rossi e Peccinin. Serviço com nota e garantia.</p>
             </div>
 
-            <div class="flex gap-4">
-                <a href="#" class="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:text-brand-blue hover:bg-blue-50 transition-colors"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:text-brand-blue hover:bg-blue-50 transition-colors"><i class="fab fa-facebook-f"></i></a>
+            <div class="p-10 glow-card rounded-3xl">
+                <div class="w-12 h-12 bg-accent/10 text-accent rounded-xl flex items-center justify-center mb-6">
+                    <i class="fas fa-handshake-angle"></i>
+                </div>
+                <h4 class="text-xl font-black mb-4 uppercase text-white">Confiança</h4>
+                <p class="text-slate-500 text-sm leading-relaxed font-medium">Orçamento honesto e transparente. Você só paga o valor justo pelo conserto necessário.</p>
             </div>
-
         </div>
-        
-        <div class="max-w-7xl mx-auto mt-12 text-center text-xs text-gray-400 font-medium">
-            &copy; 2026 Portão Pro. Todos os direitos reservados.
+    </section>
+
+    <footer class="py-12 px-6 border-t border-white/5">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
+            <div class="flex flex-col items-center md:items-start gap-2">
+                <div class="font-title text-lg tracking-tighter text-white">
+                    PORTÃO<span class="text-accent italic">PRO</span>
+                </div>
+                <p class="text-[10px] font-black uppercase tracking-[0.4em] text-slate-600">Campo Grande • MS</p>
+            </div>
+
+            <div class="flex flex-col items-center md:items-end">
+                <span class="text-accent font-black text-xs uppercase tracking-widest mb-1">WhatsApp Plantão</span>
+                <p class="text-2xl font-extrabold text-white tracking-tight">(67) 98119-4737</p>
+            </div>
+        </div>
+        <div class="text-center mt-12">
+            <p class="text-[9px] font-bold text-slate-800 uppercase tracking-[0.8em]">© 2026 Portão Pro • Performance Industrial</p>
         </div>
     </footer>
 
