@@ -1,147 +1,175 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-br" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-    <title>Conserto de Portão Eletrônico em Campo Grande MS | Portão Pro</title>
-    <meta name="description" content="Manutenção rápida e instalação de portão eletrônico em Campo Grande MS. Atendimento imediato via WhatsApp.">
+    <title>Portão Pro | Manutenção e Instalação em Campo Grande MS</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
         
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0f172a; color: #f8fafc; }
-
-        .glass-header { 
-            background: rgba(15, 23, 42, 0.9); 
-            backdrop-filter: blur(12px); 
-            border-bottom: 1px solid rgba(59, 130, 246, 0.2); 
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: #fcfcfc; 
+            color: #1e293b; 
+            overflow-x: hidden;
         }
-        
-        .btn-blue {
-            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+
+        .hero-gradient {
+            background: radial-gradient(circle at top right, #eff6ff 0%, #ffffff 50%);
+        }
+
+        .btn-whatsapp {
+            background: #25d366;
+            color: white;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
+        }
+        .btn-whatsapp:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.3);
+        }
+
+        .service-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
             transition: all 0.3s ease;
         }
-
-        .card-pro {
-            background: rgba(30, 41, 59, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-bottom: 4px solid #3b82f6;
+        .service-card:hover {
+            border-color: #3b82f6;
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
         }
 
-        .antes-depois-label {
-            background: #3b82f6;
-            color: white;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 10px;
-            font-weight: bold;
-            text-transform: uppercase;
+        .badge-city {
+            background: rgba(59, 130, 246, 0.1);
+            color: #3b82f6;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 12px;
         }
-
-        .scroll-hidden::-webkit-scrollbar { display: none; }
     </style>
 </head>
-<body class="antialiased">
+<body class="antialiased hero-gradient">
 
-    <header class="fixed w-full z-50 glass-header py-3 px-4 md:px-12 flex justify-between items-center">
-        <div class="text-lg md:text-xl font-extrabold tracking-tighter flex items-center gap-2">
-            <i class="fas fa-shield-alt text-blue-500"></i>
-            <span>PORTÃO<span class="text-blue-500">PRO</span></span>
+    <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <span class="font-extrabold text-xl tracking-tight text-slate-900">PORTÃO<span class="text-blue-600">PRO</span></span>
+            </div>
+            <a href="https://wa.me/5567981194737" class="badge-city flex items-center gap-2">
+                <i class="fas fa-map-marker-alt"></i> CAMPO GRANDE - MS
+            </a>
         </div>
-        <a href="https://wa.me/5567981194737" class="btn-blue text-white px-4 py-2 rounded-full font-bold text-[10px] uppercase tracking-widest">
-            ORÇAMENTO
-        </a>
-    </header>
+    </nav>
 
-    <section class="relative pt-32 pb-12 px-6 flex flex-col items-center">
-        <div class="max-w-7xl mx-auto w-full text-center">
-            
-            <div data-aos="fade-up">
-                <h1 class="text-[34px] md:text-7xl font-extrabold leading-[1.1] mb-6 tracking-tight">
-                    Portão travou?<br><span class="text-blue-500 italic">Resolvo agora.</span>
+    <section class="pt-40 pb-20 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+                <span class="text-blue-600 font-bold uppercase tracking-widest text-xs mb-4 block">Assistência Técnica Especializada</span>
+                <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 leading-tight mb-6">
+                    Seu portão parou?<br>Nós resolvemos <span class="text-blue-600">hoje mesmo.</span>
                 </h1>
-                
-                <div class="relative max-w-2xl mx-auto mb-8 shadow-2xl rounded-[2rem] overflow-hidden border-2 border-white/5">
-                    <img src="portao1.jpg" alt="Conserto de Portão" class="w-full h-[220px] md:h-[400px] object-cover">
-                </div>
-
-                <p class="text-slate-400 text-base md:text-lg mb-8 max-w-lg mx-auto">
-                    Conserto e instalação de portão eletrônico em Campo Grande MS com atendimento ágil.
+                <p class="text-slate-600 text-lg mb-10 max-w-lg">
+                    Manutenção rápida, troca de motores e instalação completa em Campo Grande. Atendimento ágil para você não ficar na mão.
                 </p>
-                
-                <a href="https://wa.me/5567981194737" class="btn-blue text-white py-4 px-10 rounded-2xl font-black text-lg inline-block w-full md:w-max uppercase tracking-widest">
-                    FALAR NO WHATSAPP
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-12 px-6 max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div class="card-pro p-6 rounded-2xl" data-aos="fade-up">
-                <i class="fas fa-tools text-blue-500 text-xl mb-3 block"></i>
-                <h3 class="font-bold mb-2 uppercase text-sm">Conserto Geral</h3>
-                <p class="text-slate-400 text-xs">Reparo em placas, troca de roldanas, cabos de aço e trilhos.</p>
-            </div>
-            <div class="card-pro p-6 rounded-2xl" data-aos="fade-up" data-aos-delay="100">
-                <i class="fas fa-bolt text-blue-500 text-xl mb-3 block"></i>
-                <h3 class="font-bold mb-2 uppercase text-sm">Motores Rápidos</h3>
-                <p class="text-slate-400 text-xs">Instalação de sistemas que abrem o portão em até 5 segundos.</p>
-            </div>
-            <div class="card-pro p-6 rounded-2xl" data-aos="fade-up" data-aos-delay="200">
-                <i class="fas fa-mobile-alt text-blue-500 text-xl mb-3 block"></i>
-                <h3 class="font-bold mb-2 uppercase text-sm">Acesso Smart</h3>
-                <p class="text-slate-400 text-xs">Controle seu portão pelo celular de qualquer lugar via App.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-16 px-6">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-2xl font-extrabold mb-10 text-center italic uppercase tracking-tighter">Resultados reais em <span class="text-blue-500">Campo Grande</span></h2>
-            
-            <div class="flex overflow-x-auto gap-4 pb-8 scroll-hidden snap-x snap-mandatory">
-                <div class="min-w-[90%] md:min-w-[48%] snap-center grid grid-cols-2 gap-2">
-                    <div class="relative">
-                        <img src="antes1.jpg" class="h-52 w-full object-cover rounded-xl bg-slate-800">
-                        <span class="antes-depois-label absolute top-2 left-2">Antes</span>
-                    </div>
-                    <div class="relative">
-                        <img src="depois1.jpg" class="h-52 w-full object-cover rounded-xl bg-slate-800">
-                        <span class="antes-depois-label absolute top-2 left-2 bg-green-600">Depois</span>
-                    </div>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="https://wa.me/5567981194737" class="btn-whatsapp px-8 py-4 rounded-2xl font-bold flex items-center justify-center gap-3">
+                        <i class="fab fa-whatsapp text-xl"></i> SOLICITAR ORÇAMENTO AGORA
+                    </a>
                 </div>
-                <div class="min-w-[90%] md:min-w-[48%] snap-center grid grid-cols-2 gap-2">
-                    <div class="relative">
-                        <img src="antes2.jpg" class="h-52 w-full object-cover rounded-xl bg-slate-800">
-                        <span class="antes-depois-label absolute top-2 left-2">Antes</span>
+                <div class="mt-8 flex items-center gap-6">
+                    <div class="flex -space-x-2">
+                        <div class="w-8 h-8 rounded-full bg-blue-100 border-2 border-white flex items-center justify-center text-[10px] font-bold">CG</div>
+                        <div class="w-8 h-8 rounded-full bg-blue-200 border-2 border-white flex items-center justify-center text-[10px] font-bold">MS</div>
                     </div>
-                    <div class="relative">
-                        <img src="depois2.jpg" class="h-52 w-full object-cover rounded-xl bg-slate-800">
-                        <span class="antes-depois-label absolute top-2 left-2 bg-green-600">Depois</span>
+                    <p class="text-xs font-semibold text-slate-500 uppercase tracking-tighter">+500 Clientes Atendidos na Capital</p>
+                </div>
+            </div>
+
+            <div class="relative" data-aos="zoom-in">
+                <div class="absolute -top-10 -left-10 w-32 h-32 bg-blue-600/5 rounded-full blur-3xl"></div>
+                <div class="bg-white p-4 rounded-[2.5rem] shadow-2xl border border-gray-100 relative z-10">
+                    <div class="bg-slate-900 rounded-[2rem] overflow-hidden p-8 text-white">
+                        <div class="flex justify-between items-start mb-12">
+                            <div>
+                                <p class="text-blue-400 text-xs font-bold uppercase mb-1">Status do Serviço</p>
+                                <h3 class="text-2xl font-bold italic">Manutenção Ativa</h3>
+                            </div>
+                            <i class="fas fa-tools text-blue-500 text-2xl"></i>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-4 bg-white/5 p-4 rounded-xl border border-white/10">
+                                <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                                <span class="text-sm">Técnico a caminho</span>
+                            </div>
+                            <div class="flex items-center gap-4 bg-white/5 p-4 rounded-xl border border-white/10">
+                                <i class="fas fa-check-circle text-blue-500"></i>
+                                <span class="text-sm">Peças Originais</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <p class="text-center text-slate-500 text-[10px] mt-4 uppercase">Arraste para o lado para ver mais →</p>
         </div>
     </section>
 
-    <footer class="py-12 bg-slate-950 text-center border-t border-white/5">
-        <p class="text-blue-500 font-bold mb-2 tracking-widest text-xs uppercase">Portão Pro Campo Grande</p>
-        <p class="text-slate-600 text-[10px]">© 2026 ESPECIALISTA EM AUTOMATIZAÇÃO E SEGURANÇA.</p>
+    <section class="py-20 px-6 bg-slate-50">
+        <div class="max-w-7xl mx-auto text-center mb-16">
+            <h2 class="text-3xl font-black text-slate-900 mb-4">O que fazemos por você</h2>
+            <div class="h-1 w-20 bg-blue-600 mx-auto rounded-full"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="service-card p-8" data-aos="fade-up">
+                <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6 text-2xl">
+                    <i class="fas fa-wrench"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Conserto Rápido</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">Troca de cabos, roldanas e ajustes finos para seu portão abrir sem barulho e sem travar.</p>
+            </div>
+
+            <div class="service-card p-8" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6 text-2xl">
+                    <i class="fas fa-plug"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Troca de Motores</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">Trabalhamos com as melhores marcas (PPA, Rossi, Peccinin). Motor novo com garantia total.</p>
+            </div>
+
+            <div class="service-card p-8" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6 text-2xl">
+                    <i class="fas fa-remote"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Configuração</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">Codificação de novos controles e instalação de módulos para abrir pelo celular.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-20 px-6 text-center">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-black text-slate-900 mb-8">Segurança para sua casa, tranquilidade para você.</h2>
+            <p class="text-slate-500 mb-10 italic">Atendimento em todos os bairros de Campo Grande MS.</p>
+            <a href="https://wa.me/5567981194737" class="btn-whatsapp px-12 py-5 rounded-2xl font-black inline-flex items-center gap-4 text-xl shadow-2xl">
+                <i class="fab fa-whatsapp"></i> FALAR COM O TÉCNICO
+            </a>
+            <div class="mt-16 pt-8 border-t border-gray-100">
+                <p class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.4em]">Portão Pro • Eficiência e Confiança • 2026</p>
+            </div>
+        </div>
     </footer>
 
-    <a href="https://wa.me/5567981194737" class="fixed bottom-6 right-6 bg-[#25d366] w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-2xl z-50">
-        <i class="fab fa-whatsapp text-white"></i>
-    </a>
-
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script> AOS.init({ duration: 800, once: true }); </script>
+    <script> AOS.init({ duration: 1000, once: true }); </script>
 </body>
 </html>
