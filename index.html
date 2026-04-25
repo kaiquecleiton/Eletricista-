@@ -3,144 +3,195 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portão Pro | Manutenção Ágil em Campo Grande</title>
+    <title>Portão Pro | Assistência Técnica de Elite em Campo Grande</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap');
         
         body { 
             font-family: 'Plus Jakarta Sans', sans-serif; 
             background-color: #ffffff; 
             color: #0f172a;
+            letter-spacing: -0.01em;
         }
 
-        /* Botão WhatsApp - Clean & Fast */
-        .btn-whatsapp {
+        /* Efeito de Vidro Suave no Menu */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        /* Botão de Alta Conversão */
+        .btn-master {
             background: #22c55e;
             color: white;
-            padding: 18px 32px;
-            border-radius: 12px;
+            padding: 20px 40px;
+            border-radius: 18px;
             font-weight: 800;
+            font-size: 1.15rem;
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 12px;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 15px 30px -5px rgba(34, 197, 94, 0.4);
         }
-        .btn-whatsapp:hover {
-            background: #16a34a;
-            transform: translateY(-2px);
+        .btn-master:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 25px 50px -12px rgba(34, 197, 94, 0.5);
         }
 
-        /* Seção de Problemas - Alinhamento Perfeito */
-        .problem-tag {
+        /* Tags de Problema - Clean & Alinhadas */
+        .service-tag {
+            border: 1px solid #f1f5f9;
             background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            padding: 16px 24px;
-            border-radius: 12px;
-            font-weight: 600;
+            padding: 18px 25px;
+            border-radius: 20px;
+            font-weight: 700;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 15px;
+            transition: all 0.2s ease;
+        }
+        .service-tag:hover {
+            border-color: #3b82f6;
+            background: #fff;
+            transform: translateX(10px);
         }
 
-        /* Rodapé Compacto e Fino */
-        .footer-compact {
+        /* Seção de Destaque */
+        .stat-box {
+            border-left: 4px solid #3b82f6;
+            padding-left: 20px;
+        }
+
+        /* Rodapé Compacto e Imponente */
+        .footer-elite {
             background: #0f172a;
-            color: #94a3b8;
-            padding: 40px 24px;
+            color: white;
+            padding: 60px 24px 30px;
         }
     </style>
 </head>
 <body class="antialiased">
 
-    <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 px-6 py-4">
+    <nav class="fixed top-0 w-full z-[100] glass-nav px-6 py-5">
         <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <div class="text-xl font-extrabold tracking-tighter uppercase">
+            <div class="text-2xl font-extrabold tracking-tighter uppercase italic">
                 PORTÃO<span class="text-blue-600">PRO</span>
             </div>
-            <div class="text-[10px] font-black uppercase tracking-widest bg-blue-50 text-blue-600 px-3 py-1 rounded-md">
-                Campo Grande - MS
+            <div class="flex items-center gap-6">
+                <span class="hidden md:flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-slate-400">
+                    <i class="fas fa-location-dot text-blue-600"></i> Campo Grande - MS
+                </span>
+                <a href="https://wa.me/5567981194737" class="bg-blue-600 text-white text-[10px] px-6 py-2.5 rounded-full font-black uppercase tracking-[0.2em] shadow-lg shadow-blue-500/30">Orçamento</a>
             </div>
         </div>
     </nav>
 
-    <main class="pt-32 pb-20 px-6">
-        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    <section class="pt-40 pb-24 px-6">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             
-            <div>
-                <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
-                    Seu portão <br> 
-                    <span class="text-blue-600 italic">não abre?</span>
-                </h1>
-                <p class="text-lg md:text-xl text-slate-500 mb-10 leading-relaxed">
-                    Especialista em conserto de motores e manutenção rápida em toda Campo Grande. Atendimento ágil para resolver o seu problema agora.
+            <div class="space-y-10">
+                <div>
+                    <span class="bg-blue-50 text-blue-600 px-4 py-2 rounded-lg text-xs font-black uppercase tracking-widest mb-6 inline-block">Assistência Ágil 24h</span>
+                    <h1 class="text-5xl md:text-8xl font-extrabold text-slate-900 leading-[0.95] tracking-tighter">
+                        Seu portão <br> <span class="text-blue-600">travado?</span>
+                    </h1>
+                </div>
+                
+                <p class="text-xl md:text-2xl text-slate-500 leading-relaxed max-w-lg">
+                    Conserto de motores, troca de cabos e manutenção especializada em toda <b>Campo Grande</b>. Chegamos rápido para você não ficar na mão.
                 </p>
-                <a href="https://wa.me/5567981194737" class="btn-whatsapp text-lg shadow-lg shadow-green-500/20">
-                    <i class="fab fa-whatsapp text-2xl"></i> CHAME NO WHATSAPP
-                </a>
+
+                <div class="flex flex-col gap-4">
+                    <a href="https://wa.me/5567981194737" class="btn-master">
+                        <i class="fab fa-whatsapp text-2xl"></i> CHAMAR NO WHATSAPP AGORA
+                    </a>
+                    <p class="text-xs text-slate-400 font-bold uppercase tracking-widest text-center md:text-left">
+                        <i class="fas fa-check text-green-500 mr-2"></i> Atendimento imediato na capital
+                    </p>
+                </div>
             </div>
 
-            <div class="grid grid-cols-1 gap-3">
-                <div class="problem-tag">
-                    <i class="fas fa-check-circle text-blue-600"></i>
-                    <span>Motor queimado ou travado</span>
+            <div class="space-y-4">
+                <div class="service-tag">
+                    <div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center">
+                        <i class="fas fa-wrench"></i>
+                    </div>
+                    <span>O motor não liga ou apenas faz barulho?</span>
                 </div>
-                <div class="problem-tag">
-                    <i class="fas fa-check-circle text-blue-600"></i>
-                    <span>Cabo de aço arrebentado</span>
+                <div class="service-tag">
+                    <div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center">
+                        <i class="fas fa-link-slash"></i>
+                    </div>
+                    <span>Cabo de aço arrebentou ou desfiou?</span>
                 </div>
-                <div class="problem-tag">
-                    <i class="fas fa-check-circle text-blue-600"></i>
-                    <span>Configuração de controles</span>
+                <div class="service-tag">
+                    <div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center">
+                        <i class="fas fa-rss"></i>
+                    </div>
+                    <span>Precisa configurar novos controles?</span>
                 </div>
-                <div class="problem-tag">
-                    <i class="fas fa-check-circle text-blue-600"></i>
-                    <span>Troca de placas e sensores</span>
+                <div class="service-tag">
+                    <div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center">
+                        <i class="fas fa-shield-halved"></i>
+                    </div>
+                    <span>Instalação de travas e sensores?</span>
                 </div>
             </div>
 
         </div>
-    </main>
+    </section>
 
-    <section class="py-20 px-6 bg-slate-50">
-        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div class="space-y-3">
-                <h3 class="font-extrabold text-blue-600 uppercase text-xs tracking-widest">Agilidade</h3>
-                <p class="font-bold text-slate-800">Chegamos rápido em qualquer bairro de CG.</p>
+    <section class="py-24 px-6 bg-slate-50 border-y border-slate-100">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16">
+            <div class="stat-box">
+                <h4 class="font-black uppercase text-xs tracking-widest text-blue-600 mb-2">Presença Local</h4>
+                <p class="text-slate-900 font-bold text-lg">Moro em Campo Grande e atendo todos os bairros com rapidez.</p>
             </div>
-            <div class="space-y-3">
-                <h3 class="font-extrabold text-blue-600 uppercase text-xs tracking-widest">Garantia</h3>
-                <p class="font-bold text-slate-800">Peças originais (PPA, Rossi e Peccinin).</p>
+            <div class="stat-box">
+                <h4 class="font-black uppercase text-xs tracking-widest text-blue-600 mb-2">Qualidade</h4>
+                <p class="text-slate-900 font-bold text-lg">Peças originais PPA, Rossi e Peccinin com garantia total.</p>
             </div>
-            <div class="space-y-3">
-                <h3 class="font-extrabold text-blue-600 uppercase text-xs tracking-widest">Preço</h3>
-                <p class="font-bold text-slate-800">Orçamento justo e sem enrolação.</p>
+            <div class="stat-box">
+                <h4 class="font-black uppercase text-xs tracking-widest text-blue-600 mb-2">Transparência</h4>
+                <p class="text-slate-900 font-bold text-lg">Orçamento honesto e preço justo. Sem taxas escondidas.</p>
             </div>
         </div>
     </section>
 
-    <footer class="footer-compact">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
-            
-            <div>
-                <div class="text-xl font-extrabold text-white mb-2 uppercase tracking-tighter">
-                    PORTÃO<span class="text-blue-600">PRO</span>
+    <footer class="footer-elite px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-12 border-b border-white/5 pb-12">
+                
+                <div class="text-center md:text-left">
+                    <div class="text-3xl font-black italic tracking-tighter uppercase mb-2">
+                        PORTÃO<span class="text-blue-600">PRO</span>
+                    </div>
+                    <p class="text-slate-400 text-xs font-bold uppercase tracking-[0.3em]">Campo Grande • Mato Grosso do Sul</p>
                 </div>
-                <p class="text-xs font-bold uppercase tracking-widest">Campo Grande - MS</p>
+
+                <div class="flex flex-col items-center md:items-end">
+                    <span class="text-blue-500 font-black text-xs uppercase tracking-widest mb-2">WhatsApp Plantão</span>
+                    <a href="https://wa.me/5567981194737" class="text-2xl md:text-4xl font-black hover:text-blue-500 transition-colors">
+                        (67) 98119-4737
+                    </a>
+                </div>
+
             </div>
 
-            <div class="flex flex-col md:items-end gap-1">
-                <p class="text-white font-extrabold text-lg">(67) 98119-4737</p>
-                <p class="text-[10px] uppercase tracking-widest font-bold">Atendimento Seg a Sáb • 07:30 - 18:30</p>
+            <div class="mt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-[9px] font-bold text-slate-600 uppercase tracking-[0.5em]">© 2026 Portão Pro • Excelência em Automação</p>
+                <div class="flex gap-6 text-slate-500">
+                    <i class="fab fa-instagram hover:text-white transition-colors cursor-pointer"></i>
+                    <i class="fab fa-facebook hover:text-white transition-colors cursor-pointer"></i>
+                </div>
             </div>
-
-        </div>
-        
-        <div class="max-w-6xl mx-auto mt-10 pt-6 border-t border-slate-800 text-center">
-            <p class="text-[9px] font-bold uppercase tracking-[0.4em]">© 2026 • Todos os direitos reservados</p>
         </div>
     </footer>
 
