@@ -1,455 +1,528 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Eletricista Residencial | Atendimento Rápido</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eletricista em Campo Grande MS | Atendimento 24h</title>
+  <meta name="description" content="Eletricista em Campo Grande MS. Residencial e comercial, emergências 24h. Orçamento grátis." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    :root {
+      --ink:     #111111;
+      --ink-2:   #52525B;
+      --ink-3:   #A1A1AA;
+      --border:  #E4E4E7;
+      --surface: #F5F5F5;
+      --white:   #FFFFFF;
+      --blue:    #1C4ED8;
+      --blue-hv: #1741B0;
+      --green:   #16A34A;
+    }
 
-<style>
-:root{
-    --primary:#f7b500;
-    --dark:#0f172a;
-    --dark2:#1e293b;
-    --light:#f8fafc;
-    --gray:#94a3b8;
-    --success:#25d366;
-}
+    html { scroll-behavior: smooth; }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--white);
+      color: var(--ink);
+      line-height: 1.6;
+    }
 
-body{
-    font-family:'Inter',sans-serif;
-    background:var(--light);
-    color:#1e293b;
-    line-height:1.6;
-}
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 clamp(20px, 5%, 80px);
+      height: 60px;
+    }
+    .nav-logo {
+      font-weight: 700; font-size: 1rem;
+      color: var(--ink); letter-spacing: -0.3px;
+    }
+    .nav-logo span { color: var(--blue); }
+    .nav-actions { display: flex; align-items: center; gap: 16px; }
+    .nav-tel {
+      font-size: .85rem; color: var(--ink-2); text-decoration: none;
+      font-weight: 500;
+    }
+    .nav-tel:hover { color: var(--ink); }
+    .btn-primary {
+      background: var(--blue); color: var(--white);
+      font-family: 'DM Sans', sans-serif; font-weight: 700;
+      font-size: .85rem; padding: 9px 20px;
+      border-radius: 6px; text-decoration: none;
+      transition: background .15s;
+      white-space: nowrap;
+    }
+    .btn-primary:hover { background: var(--blue-hv); }
 
-.container{
-    width:90%;
-    max-width:1200px;
-    margin:auto;
-}
+    /* ── HERO ── */
+    .hero {
+      padding: 120px clamp(20px, 5%, 80px) 80px;
+      max-width: 1100px; margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px; align-items: center;
+    }
 
-.hero{
-    background:
-    linear-gradient(rgba(15,23,42,.85),rgba(15,23,42,.90)),
-    url('https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=1600');
-    background-size:cover;
-    background-position:center;
-    min-height:90vh;
-    display:flex;
-    align-items:center;
-}
+    .hero-left {}
 
-.hero-content{
-    max-width:700px;
-    color:white;
-}
+    .hero-rule {
+      width: 40px; height: 3px;
+      background: var(--blue);
+      margin-bottom: 28px;
+    }
 
-.badge{
-    display:inline-block;
-    background:rgba(247,181,0,.15);
-    border:1px solid rgba(247,181,0,.35);
-    color:var(--primary);
-    padding:8px 16px;
-    border-radius:30px;
-    margin-bottom:20px;
-    font-size:14px;
-    font-weight:600;
-}
+    .hero h1 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.8px;
+      color: var(--ink);
+      margin-bottom: 20px;
+    }
 
-.hero h1{
-    font-size:3.5rem;
-    line-height:1.1;
-    margin-bottom:20px;
-}
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--ink-2);
+      max-width: 420px;
+      margin-bottom: 36px;
+      line-height: 1.7;
+    }
 
-.hero p{
-    color:#dbe2ea;
-    font-size:1.15rem;
-    margin-bottom:30px;
-}
+    .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
 
-.btn{
-    display:inline-block;
-    text-decoration:none;
-    padding:16px 32px;
-    border-radius:10px;
-    font-weight:700;
-    transition:.3s;
-}
+    .btn-wap {
+      display: inline-flex; align-items: center; gap: 9px;
+      background: var(--blue); color: var(--white);
+      font-family: 'DM Sans', sans-serif; font-weight: 700;
+      font-size: .95rem; padding: 13px 24px;
+      border-radius: 6px; text-decoration: none;
+      transition: background .15s;
+    }
+    .btn-wap:hover { background: var(--blue-hv); }
+    .btn-wap svg { width: 18px; height: 18px; flex-shrink: 0; }
 
-.btn-whatsapp{
-    background:var(--success);
-    color:white;
-}
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--ink); font-weight: 500; font-size: .95rem;
+      text-decoration: none; border: 1px solid var(--border);
+      padding: 12px 22px; border-radius: 6px;
+      transition: border-color .15s;
+    }
+    .btn-ghost:hover { border-color: var(--ink-2); }
 
-.btn-whatsapp:hover{
-    transform:translateY(-3px);
-}
+    .hero-badges {
+      margin-top: 32px;
+      display: flex; flex-wrap: wrap; gap: 10px;
+    }
+    .badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: .8rem; color: var(--ink-2); font-weight: 500;
+      border: 1px solid var(--border);
+      padding: 5px 12px; border-radius: 100px;
+    }
+    .badge::before {
+      content: '';
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--blue); flex-shrink: 0;
+    }
 
-.stats{
-    display:flex;
-    gap:20px;
-    margin-top:40px;
-    flex-wrap:wrap;
-}
+    /* hero right — stat block */
+    .hero-right {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 36px;
+    }
+    .stat-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--border);
+      border-radius: 8px; overflow: hidden;
+      margin-bottom: 28px;
+    }
+    .stat {
+      background: var(--white);
+      padding: 24px 20px;
+    }
+    .stat-num {
+      font-size: 2rem; font-weight: 700; letter-spacing: -1px;
+      color: var(--ink); line-height: 1;
+      margin-bottom: 4px;
+    }
+    .stat-label { font-size: .82rem; color: var(--ink-2); }
+    .avail {
+      display: flex; align-items: center; gap: 10px;
+      font-size: .88rem; color: var(--ink-2);
+      padding: 14px 16px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+    .avail-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--green); flex-shrink: 0;
+      animation: pulse-g 2s ease-in-out infinite;
+    }
+    @keyframes pulse-g {
+      0%,100% { opacity: 1; box-shadow: 0 0 0 0 rgba(22,163,74,.4); }
+      50%      { opacity: .8; box-shadow: 0 0 0 5px rgba(22,163,74,0); }
+    }
+    .avail strong { color: var(--ink); font-weight: 600; }
 
-.stat{
-    background:rgba(255,255,255,.08);
-    backdrop-filter:blur(10px);
-    padding:20px;
-    border-radius:12px;
-    min-width:160px;
-}
+    /* ── DIVIDER ── */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0;
+    }
 
-.stat strong{
-    display:block;
-    color:var(--primary);
-    font-size:1.8rem;
-}
+    /* ── SECTIONS ── */
+    .section-wrap {
+      max-width: 1100px; margin: 0 auto;
+      padding: 80px clamp(20px, 5%, 80px);
+    }
 
-section{
-    padding:90px 0;
-}
+    .section-eyebrow {
+      font-size: .75rem; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--blue); margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 700; letter-spacing: -0.5px;
+      line-height: 1.2; color: var(--ink);
+      margin-bottom: 12px;
+    }
+    .section-sub {
+      font-size: 1rem; color: var(--ink-2);
+      max-width: 480px; line-height: 1.7;
+    }
+    .section-head { margin-bottom: 48px; }
 
-.section-title{
-    text-align:center;
-    margin-bottom:60px;
-}
+    /* ── SERVICES ── */
+    .services-bg { background: var(--surface); }
 
-.section-title h2{
-    font-size:2.3rem;
-    color:var(--dark);
-}
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 10px; overflow: hidden;
+    }
+    .service-card {
+      background: var(--white);
+      padding: 28px 24px;
+      transition: background .15s;
+    }
+    .service-card:hover { background: #fafafa; }
+    .svc-icon {
+      color: var(--blue);
+      margin-bottom: 16px;
+    }
+    .service-card h3 {
+      font-size: .95rem; font-weight: 700;
+      margin-bottom: 8px; color: var(--ink);
+    }
+    .service-card p { font-size: .88rem; color: var(--ink-2); line-height: 1.6; }
 
-.section-title p{
-    color:var(--gray);
-}
+    /* ── PROCESS ── */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+    }
+    .proc-step {}
+    .proc-num {
+      font-size: .75rem; font-weight: 700;
+      color: var(--blue); letter-spacing: .08em;
+      margin-bottom: 16px;
+    }
+    .proc-step h4 {
+      font-size: .95rem; font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .proc-step p { font-size: .88rem; color: var(--ink-2); line-height: 1.6; }
+    .proc-line {
+      height: 1px; background: var(--border);
+      margin-bottom: 48px;
+    }
 
-.services{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
-}
+    /* ── TESTIMONIALS ── */
+    .testi-bg { background: var(--surface); }
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    .testi-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px; padding: 28px;
+    }
+    .stars { font-size: .85rem; color: var(--blue); margin-bottom: 14px; letter-spacing: 2px; }
+    .testi-text {
+      font-size: .93rem; color: var(--ink);
+      line-height: 1.65; margin-bottom: 20px;
+    }
+    .testi-author { display: flex; align-items: center; gap: 12px; }
+    .avatar {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: .75rem; font-weight: 700;
+      color: var(--ink-2); flex-shrink: 0;
+    }
+    .author-name { font-size: .87rem; font-weight: 600; color: var(--ink); }
+    .author-loc  { font-size: .8rem; color: var(--ink-3); }
 
-.card{
-    background:white;
-    padding:30px;
-    border-radius:18px;
-    box-shadow:0 10px 35px rgba(0,0,0,.08);
-    transition:.3s;
-}
+    /* ── CTA FINAL ── */
+    .cta-section {
+      background: var(--ink);
+    }
+    .cta-inner {
+      max-width: 1100px; margin: 0 auto;
+      padding: 80px clamp(20px, 5%, 80px);
+      display: grid; grid-template-columns: 1fr auto;
+      gap: 40px; align-items: center;
+    }
+    .cta-inner h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 700; letter-spacing: -0.5px;
+      color: var(--white); line-height: 1.2;
+    }
+    .cta-inner p { font-size: .97rem; color: #71717A; margin-top: 10px; }
+    .btn-wap-lg {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--white); color: var(--ink);
+      font-family: 'DM Sans', sans-serif; font-weight: 700;
+      font-size: 1rem; padding: 15px 28px;
+      border-radius: 6px; text-decoration: none;
+      transition: opacity .15s; white-space: nowrap;
+    }
+    .btn-wap-lg:hover { opacity: .9; }
+    .btn-wap-lg svg { width: 20px; height: 20px; flex-shrink: 0; }
 
-.card:hover{
-    transform:translateY(-8px);
-}
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid #27272A;
+      background: var(--ink);
+      padding: 24px clamp(20px, 5%, 80px);
+      display: flex; flex-wrap: wrap; gap: 12px;
+      align-items: center; justify-content: space-between;
+      font-size: .82rem; color: #52525B;
+    }
+    footer a { color: #71717A; text-decoration: none; }
+    footer a:hover { color: var(--white); }
 
-.icon{
-    width:60px;
-    height:60px;
-    border-radius:12px;
-    background:#fff8df;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:28px;
-    margin-bottom:20px;
-}
+    /* ── FLOAT WAP ── */
+    .float-wap {
+      position: fixed; bottom: 24px; right: 24px; z-index: 200;
+      background: var(--blue);
+      width: 52px; height: 52px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 2px 16px rgba(28,78,216,.35);
+      text-decoration: none; color: var(--white);
+      transition: background .15s, transform .15s;
+    }
+    .float-wap:hover { background: var(--blue-hv); transform: scale(1.06); }
+    .float-wap svg { width: 24px; height: 24px; }
 
-.card h3{
-    margin-bottom:10px;
-}
+    /* ── RESPONSIVE ── */
+    @media (max-width: 720px) {
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 40px; padding-top: 96px;
+      }
+      .hero-right { display: none; }
+      .cta-inner { grid-template-columns: 1fr; }
+      .nav-tel { display: none; }
+    }
 
-.card p{
-    color:#64748b;
-}
-
-.dark{
-    background:var(--dark);
-    color:white;
-}
-
-.diferenciais{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
-}
-
-.diferencial{
-    background:var(--dark2);
-    padding:30px;
-    border-radius:18px;
-}
-
-.diferencial h3{
-    margin-bottom:12px;
-    color:var(--primary);
-}
-
-.testimonials{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:25px;
-}
-
-.testimonial{
-    background:white;
-    padding:30px;
-    border-radius:18px;
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
-}
-
-.stars{
-    color:#f7b500;
-    margin-bottom:15px;
-}
-
-.cta{
-    background:linear-gradient(135deg,#f7b500,#ffcb3d);
-    text-align:center;
-    padding:90px 20px;
-}
-
-.cta h2{
-    font-size:2.5rem;
-    margin-bottom:20px;
-}
-
-.cta p{
-    max-width:700px;
-    margin:auto;
-    margin-bottom:30px;
-}
-
-.cta .btn{
-    background:#0f172a;
-    color:white;
-}
-
-footer{
-    background:#0f172a;
-    color:#94a3b8;
-    text-align:center;
-    padding:30px;
-}
-
-@media(max-width:768px){
-
-.hero h1{
-    font-size:2.3rem;
-}
-
-.section-title h2{
-    font-size:1.8rem;
-}
-
-.stats{
-    flex-direction:column;
-}
-}
-</style>
+    @media (prefers-reduced-motion: reduce) {
+      .avail-dot { animation: none; }
+    }
+  </style>
 </head>
 <body>
 
-<section class="hero">
-    <div class="container">
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Elétrica<span>CG</span></div>
+  <div class="nav-actions">
+    <a class="nav-tel" href="tel:+5567999999999">(67) 9 9999-9999</a>
+    <a class="btn-primary" href="https://wa.me/5567999999999?text=Olá!%20Preciso%20de%20um%20orçamento." target="_blank">Orçamento grátis</a>
+  </div>
+</nav>
 
-        <div class="hero-content">
-
-            <span class="badge">
-                ⚡ Atendimento Residencial
-            </span>
-
-            <h1>
-                Problemas Elétricos?
-                Resolva Hoje Mesmo.
-            </h1>
-
-            <p>
-                Atendimento para falta de energia, troca de disjuntores,
-                chuveiros queimados, tomadas, ventiladores de teto e
-                manutenção elétrica residencial.
-            </p>
-
-            <a href="https://wa.me/5567999999999" class="btn btn-whatsapp">
-                Solicitar Orçamento no WhatsApp
-            </a>
-
-            <div class="stats">
-
-                <div class="stat">
-                    <strong>+500</strong>
-                    Serviços realizados
-                </div>
-
-                <div class="stat">
-                    <strong>Rápido</strong>
-                    Atendimento ágil
-                </div>
-
-                <div class="stat">
-                    <strong>100%</strong>
-                    Foco na segurança
-                </div>
-
-            </div>
-
-        </div>
-
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-rule"></div>
+    <h1>Eletricista em Campo Grande com hora marcada.</h1>
+    <p class="hero-sub">Serviços elétricos residenciais e comerciais. Atendimento de emergência 24h, orçamento transparente e garantia por escrito.</p>
+    <div class="hero-cta">
+      <a class="btn-wap" href="https://wa.me/5567999999999?text=Olá!%20Preciso%20de%20um%20eletricista." target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.77 11.77 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.16 1.6 5.97L0 24l6.22-1.63A11.94 11.94 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.2-1.25-6.21-3.48-8.52zM12 22c-1.85 0-3.67-.5-5.25-1.44l-.38-.22-3.7.97.99-3.6-.25-.38A9.94 9.94 0 0 1 2 12C2 6.48 6.48 2 12 2c2.67 0 5.18 1.04 7.07 2.93A9.94 9.94 0 0 1 22 12c0 5.52-4.48 10-10 10zm5.44-7.4c-.3-.15-1.77-.87-2.04-.97-.28-.1-.48-.15-.68.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.8-1.49-1.78-1.66-2.08-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.68-1.63-.93-2.23-.24-.58-.49-.5-.68-.51-.17-.01-.37-.01-.57-.01-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49 0 1.47 1.07 2.89 1.22 3.09.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.62.71.23 1.36.2 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.34z"/></svg>
+        Chamar no WhatsApp
+      </a>
+      <a class="btn-ghost" href="tel:+5567999999999">Ligar agora</a>
     </div>
-</section>
-
-<section>
-
-<div class="container">
-
-    <div class="section-title">
-        <h2>Serviços Realizados</h2>
-        <p>Soluções para os problemas elétricos mais comuns.</p>
+    <div class="hero-badges">
+      <span class="badge">NR-10 certificado</span>
+      <span class="badge">ART disponível</span>
+      <span class="badge">Garantia por escrito</span>
     </div>
+  </div>
 
-    <div class="services">
-
-        <div class="card">
-            <div class="icon">⚡</div>
-            <h3>Falta de Energia</h3>
-            <p>Diagnóstico e correção de falhas elétricas residenciais.</p>
-        </div>
-
-        <div class="card">
-            <div class="icon">🚿</div>
-            <h3>Chuveiro Queimado</h3>
-            <p>Troca de resistência, instalação e substituição completa.</p>
-        </div>
-
-        <div class="card">
-            <div class="icon">🔌</div>
-            <h3>Tomadas e Interruptores</h3>
-            <p>Instalação, manutenção e substituição.</p>
-        </div>
-
-        <div class="card">
-            <div class="icon">📦</div>
-            <h3>Quadro Elétrico</h3>
-            <p>Troca de disjuntores e organização do quadro.</p>
-        </div>
-
-        <div class="card">
-            <div class="icon">💡</div>
-            <h3>Iluminação</h3>
-            <p>Instalação de luminárias, refletores e LEDs.</p>
-        </div>
-
-        <div class="card">
-            <div class="icon">🛠️</div>
-            <h3>Manutenção Geral</h3>
-            <p>Correção de curtos, aquecimento e mau contato.</p>
-        </div>
-
+  <div class="hero-right">
+    <div class="stat-grid">
+      <div class="stat">
+        <div class="stat-num">10+</div>
+        <div class="stat-label">Anos de experiência</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">500+</div>
+        <div class="stat-label">Clientes atendidos</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">60min</div>
+        <div class="stat-label">Resposta emergências</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Satisfação garantida</div>
+      </div>
     </div>
-
+    <div class="avail">
+      <div class="avail-dot"></div>
+      <span><strong>Disponível agora</strong> — emergências 24h</span>
+    </div>
+  </div>
 </div>
 
-</section>
+<hr class="divider" />
 
-<section class="dark">
-
-<div class="container">
-
-    <div class="section-title">
-        <h2 style="color:white;">Por Que Escolher Nosso Serviço?</h2>
+<!-- SERVICES -->
+<div class="services-bg">
+  <div class="section-wrap">
+    <div class="section-head">
+      <div class="section-eyebrow">Serviços</div>
+      <h2 class="section-title">Do reparo simples<br>à instalação completa</h2>
+      <p class="section-sub">Residencial, comercial e industrial. Trabalhamos com materiais de primeira linha e prazo cumprido.</p>
     </div>
 
-    <div class="diferenciais">
-
-        <div class="diferencial">
-            <h3>Atendimento Rápido</h3>
-            <p>Resposta ágil para emergências e manutenção elétrica.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="svc-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
         </div>
-
-        <div class="diferencial">
-            <h3>Serviço Organizado</h3>
-            <p>Execução limpa e cuidadosa dentro da sua residência.</p>
+        <h3>Emergências 24h</h3>
+        <p>Curto-circuito, queda de energia ou cheiro de queimado. Atendimento em até 60 minutos em Campo Grande.</p>
+      </div>
+      <div class="service-card">
+        <div class="svc-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></svg>
         </div>
-
-        <div class="diferencial">
-            <h3>Preço Justo</h3>
-            <p>Orçamento transparente antes da execução.</p>
+        <h3>Quadros elétricos</h3>
+        <p>Instalação, troca e modernização de quadros de distribuição com disjuntores e dispositivos de proteção.</p>
+      </div>
+      <div class="service-card">
+        <div class="svc-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
         </div>
-
-        <div class="diferencial">
-            <h3>Segurança</h3>
-            <p>Boas práticas para proteger sua instalação elétrica.</p>
+        <h3>Iluminação</h3>
+        <p>Spots, fitas LED, luminárias externas e automação. Projetos residenciais e comerciais com eficiência energética.</p>
+      </div>
+      <div class="service-card">
+        <div class="svc-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
         </div>
-
+        <h3>Tomadas e pontos</h3>
+        <p>Instalação e reposicionamento de tomadas, interruptores e novos pontos elétricos sem quebra desnecessária.</p>
+      </div>
+      <div class="service-card">
+        <div class="svc-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+        </div>
+        <h3>Ar-condicionado</h3>
+        <p>Ponto elétrico específico e instalação segura para qualquer modelo de split, seguindo as normas do fabricante.</p>
+      </div>
+      <div class="service-card">
+        <div class="svc-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>SPDA / Para-raios</h3>
+        <p>Projeto e instalação de sistema de proteção contra descargas atmosféricas para residências e comércios.</p>
+      </div>
     </div>
-
+  </div>
 </div>
 
-</section>
+<hr class="divider" />
 
-<section>
-
-<div class="container">
-
-    <div class="section-title">
-        <h2>O Que os Clientes Dizem</h2>
+<!-- PROCESS -->
+<div class="section-wrap">
+  <div class="section-head">
+    <div class="section-eyebrow">Como funciona</div>
+    <h2 class="section-title">Quatro passos,<br>zero surpresa</h2>
+    <p class="section-sub">Processo simples e preço fechado antes de qualquer serviço começar.</p>
+  </div>
+  <div class="proc-line"></div>
+  <div class="process-grid">
+    <div class="proc-step">
+      <div class="proc-num">01 — CONTATO</div>
+      <h4>Você nos chama</h4>
+      <p>WhatsApp ou telefone. Descreva o que está acontecendo — a gente já orienta o que fazer enquanto não chega.</p>
     </div>
-
-    <div class="testimonials">
-
-        <div class="testimonial">
-            <div class="stars">★★★★★</div>
-            <p>
-                Resolveu meu problema de falta de energia rapidamente.
-                Atendimento excelente.
-            </p>
-        </div>
-
-        <div class="testimonial">
-            <div class="stars">★★★★★</div>
-            <p>
-                Troca do chuveiro realizada com qualidade e preço justo.
-            </p>
-        </div>
-
-        <div class="testimonial">
-            <div class="stars">★★★★★</div>
-            <p>
-                Muito profissional e pontual. Recomendo.
-            </p>
-        </div>
-
+    <div class="proc-step">
+      <div class="proc-num">02 — VISITA</div>
+      <h4>Diagnóstico no local</h4>
+      <p>Vamos até você, avaliamos o problema e apresentamos um orçamento detalhado e sem letras miúdas.</p>
     </div>
-
+    <div class="proc-step">
+      <div class="proc-num">03 — SERVIÇO</div>
+      <h4>Execução organizada</h4>
+      <p>Trabalhamos com materiais homologados, limpamos o local ao final e testamos tudo antes de ir embora.</p>
+    </div>
+    <div class="proc-step">
+      <div class="proc-num">04 — GARANTIA</div>
+      <h4>Garantia entregue</h4>
+      <p>Você recebe a garantia por escrito. Surgiu qualquer problema dentro do prazo, resolvemos sem custo adicional.</p>
+    </div>
+  </div>
 </div>
 
-</section>
+<hr class="divider" />
 
-<section class="cta">
-
-    <h2>Precisa de um Eletricista?</h2>
-
-    <p>
-        Entre em contato agora pelo WhatsApp e solicite seu orçamento.
-    </p>
-
-    <a href="https://wa.me/5567999999999" class="btn">
-        Falar no WhatsApp
-    </a>
-
-</section>
-
-<footer>
-    © 2026 • Serviços de Manutenção Elétrica Residencial
-</footer>
-
-</body>
-</html>
+<!-- TESTIMONIALS -->
+<div class="testi-bg">
+  <div class="section-wrap">
+    <div class="section-head">
+      <div class="section-eyebrow">Depoimentos</div>
+      <h2 class="section-title">O que dizem nossos clientes</h2>
+      <p class="section-sub">Avaliações de moradores e empresas atendidos em Campo Grande.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">"Chamei às 22h por causa de um curto no quadro. Em menos de 40 minutos ele já estava aqui. Resolveu na hora, preço justo e ainda explicou o que havia acontecido."</p>
+        <div class="testi-author">
+          <div class="avatar">MF</div>
+          <div>
+            <div class="author-name">Márcia Fernandes</div>
+            <div class="author-loc">Carandá Bosque, Campo Grande</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="testi-text">"Fez a instalação elétrica compão elétrica comp
